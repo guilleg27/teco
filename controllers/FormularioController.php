@@ -8,6 +8,8 @@ use app\models\FormularioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+
 
 /**
  * FormularioController implements the CRUD actions for Formulario model.
@@ -20,10 +22,25 @@ class FormularioController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                    [
+                        'actions' => ['promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb'],
+                        'allow' => true,
+                        'roles' => ['?'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'delete' => ['post'],
                 ],
             ],
         ];
@@ -164,6 +181,7 @@ class FormularioController extends Controller
     public function actionGenerica()
     {
         $this->layout = 'vacio';
+        $request = Yii::$app->request;
         $ktoken = $request->get('ktoken');
         return $this->render('generica', [
             'ktoken' => $ktoken
@@ -173,6 +191,7 @@ class FormularioController extends Controller
     public function actionPromo5gb()
     {
         $this->layout = 'vacio';
+        $request = Yii::$app->request;
         $ktoken = $request->get('ktoken');
         return $this->render('promo5gb', [
             'ktoken' => $ktoken
@@ -182,6 +201,7 @@ class FormularioController extends Controller
     public function actionPromo8gb()
     {
         $this->layout = 'vacio';
+        $request = Yii::$app->request;
         $ktoken = $request->get('ktoken');
         return $this->render('promo8gb', [
             'ktoken' => $ktoken
@@ -191,6 +211,7 @@ class FormularioController extends Controller
     public function actionPromo12gb()
     {
         $this->layout = 'vacio';
+        $request = Yii::$app->request;
         $ktoken = $request->get('ktoken');
         return $this->render('promo12gb', [
             'ktoken' => $ktoken
@@ -200,6 +221,7 @@ class FormularioController extends Controller
     public function actionPromo20gb()
     {
         $this->layout = 'vacio';
+        $request = Yii::$app->request;
         $ktoken = $request->get('ktoken');
         return $this->render('promo20gb', [
             'ktoken' => $ktoken

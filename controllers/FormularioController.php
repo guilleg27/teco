@@ -145,11 +145,11 @@ class FormularioController extends Controller
             $model->date = date('Y-m-d H:i:s');
 
             if($model->save()){
-                //Si es valido hago el S2S a kickads
-                // $url    = "http://www.kickadserver.mobi/convLog/?ktoken=".$ktoken;
-                // $curl   = curl_init($url);
-                // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-                // $result = curl_exec($curl);
+                //S2S a kickads
+                $url    = "http://www.kickadserver.mobi/convLog/?ktoken=".$model->ktoken;
+                $curl   = curl_init($url);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                $result = curl_exec($curl);
             }
         } else {
             $code = 400;
@@ -164,55 +164,45 @@ class FormularioController extends Controller
     public function actionGenerica()
     {
         $this->layout = 'vacio';
-        $request = Yii::$app->request;
-        // $ktoken = $request->get('ktoken');
+        $ktoken = $request->get('ktoken');
         return $this->render('generica', [
-            // 'ktoken' => $ktoken
-            'request' => $request
+            'ktoken' => $ktoken
         ]);
     }
 
     public function actionPromo5gb()
     {
-        $request = Yii::$app->request;
         $this->layout = 'vacio';
-        // $ktoken = $request->get('ktoken');
+        $ktoken = $request->get('ktoken');
         return $this->render('promo5gb', [
-            // 'ktoken' => $ktoken
-            'request' => $request
+            'ktoken' => $ktoken
         ]);
     }
 
     public function actionPromo8gb()
     {
         $this->layout = 'vacio';
-        $request = Yii::$app->request;
-        // $ktoken = $request->get('ktoken');
+        $ktoken = $request->get('ktoken');
         return $this->render('promo8gb', [
-            // 'ktoken' => $ktoken
-            'request' => $request
+            'ktoken' => $ktoken
         ]);
     }
 
     public function actionPromo12gb()
     {
         $this->layout = 'vacio';
-        $request = Yii::$app->request;
-        // $ktoken = $request->get('ktoken');
+        $ktoken = $request->get('ktoken');
         return $this->render('promo12gb', [
-            // 'ktoken' => $ktoken
-            'request' => $request
+            'ktoken' => $ktoken
         ]);
     }
 
     public function actionPromo20gb()
     {
         $this->layout = 'vacio';
-        $request = Yii::$app->request;
-        // $ktoken = $request->get('ktoken');
+        $ktoken = $request->get('ktoken');
         return $this->render('promo20gb', [
-            // 'ktoken' => $ktoken
-            'request' => $request
+            'ktoken' => $ktoken
         ]);
     }
 }

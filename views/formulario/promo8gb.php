@@ -96,7 +96,7 @@ use yii\helpers\Url;
                                 </div>
                             </div>
                             <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="8GB">
-                            <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="ktoken">
+                            <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen" name="form-gen" value="gen2">
                             <div class="col-md-12">
                               <div class="form-field-wrapper text-left">

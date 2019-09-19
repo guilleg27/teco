@@ -107,7 +107,7 @@ use yii\helpers\Url;
                                 </div>
                             </div>
                             <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="5GB">
-                            <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="ktoken">
+                            <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen" name="form-gen" value="gen1">
                              <div class="col-md-12">
                               <div class="form-field-wrapper text-left">
@@ -178,7 +178,7 @@ use yii\helpers\Url;
                                 </div>
                             </div>
                             <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="8GB">
-                            <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="ktoken">
+                            <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="<?php echo $ktoken ?>">
                              <div class="col-md-12">
                               <div class="form-field-wrapper text-left">
                                 <p>*Campos obligatorios</p>
@@ -248,7 +248,7 @@ use yii\helpers\Url;
                                 </div>
                             </div>
                             <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="12GB">
-                            <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="ktoken">
+                            <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="<?php echo $ktoken ?>">
                              <div class="col-md-12">
                               <div class="form-field-wrapper text-left">
                                 <p>*Campos obligatorios</p>
@@ -316,7 +316,7 @@ use yii\helpers\Url;
                                 </div>
                             </div>
                             <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="20GB">
-                            <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="ktoken">
+                            <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="<?php echo $ktoken ?>">
                              <div class="col-md-12">
                               <div class="form-field-wrapper text-left">
                                 <p>*Campos obligatorios</p>

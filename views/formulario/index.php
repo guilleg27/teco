@@ -44,6 +44,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'after' => Html::a('<i class="glyphicon glyphicon-repeat"></i> Reset List', ['index'], ['class' => 'btn btn-info']),
             'showFooter' => false
         ],
+        'export' => [
+            'label'=>'Export',
+        ],
+        'exportConfig' => [
+            GridView::CSV => ['filename' => 'TelecomLeads'],
+            GridView::EXCEL => ['filename' => 'TelecomLeads'],
+        ]
     ]); Pjax::end(); ?>
 
 

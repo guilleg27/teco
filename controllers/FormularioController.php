@@ -182,7 +182,7 @@ class FormularioController extends Controller
     {
         $this->layout = 'vacio';
         $request = Yii::$app->request;
-        $ktoken = $request->get('ktoken');
+        $ktoken = $request->get('ktoken') ?: "empty";
         return $this->render('generica', [
             'ktoken' => $ktoken
         ]);
@@ -192,7 +192,7 @@ class FormularioController extends Controller
     {
         $this->layout = 'vacio';
         $request = Yii::$app->request;
-        $ktoken = $request->get('ktoken');
+        $ktoken = $request->get('ktoken') ?: "empty";
         return $this->render('promo5gb', [
             'ktoken' => $ktoken
         ]);
@@ -202,7 +202,7 @@ class FormularioController extends Controller
     {
         $this->layout = 'vacio';
         $request = Yii::$app->request;
-        $ktoken = $request->get('ktoken');
+        $ktoken = $request->get('ktoken') ?: "empty";
         return $this->render('promo8gb', [
             'ktoken' => $ktoken
         ]);
@@ -212,7 +212,7 @@ class FormularioController extends Controller
     {
         $this->layout = 'vacio';
         $request = Yii::$app->request;
-        $ktoken = $request->get('ktoken');
+        $ktoken = $request->get('ktoken') ?: "empty";
         return $this->render('promo12gb', [
             'ktoken' => $ktoken
         ]);
@@ -222,7 +222,7 @@ class FormularioController extends Controller
     {
         $this->layout = 'vacio';
         $request = Yii::$app->request;
-        $ktoken = $request->get('ktoken');
+        $ktoken = $request->get('ktoken') ?: "empty";
         return $this->render('promo20gb', [
             'ktoken' => $ktoken
         ]);

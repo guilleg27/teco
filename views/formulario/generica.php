@@ -150,7 +150,7 @@ use yii\helpers\Url;
                             </div>
                            <div class="tapaform" id="form8gb" style="display:none;">
                            <a style="color: #555555; background-color: transparent;position: absolute;left: 85%;z-index: 20;" class="btn btn-md btn-color" onclick="hide8gb()">x</a>
-                        <form id="contact" class="contact-form row" role="form">
+                        <form id="contact8gb" class="contact-form row" role="form">
                         <div class="col-md-12 text-center" style="height: 42px">
                                 <h5 class="successContent8GB" style="color: #5cb45d; font-size: 14px">
                                     <i class="fa fa-check left" style="color: #5cb45d;"></i>¡Tu mensaje se envió correctamente!
@@ -162,23 +162,24 @@ use yii\helpers\Url;
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Nombre completo: *</label>
-                                    <input class="input-md form-full" id="form-name" type="text" name="form-name" placeholder="María Perez" required />
+                                    <input class="input-md form-full" id="form-name8gb" type="text" name="form-name8gb" placeholder="María Perez" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="email">Email: *</label>
-                                    <input class="input-md form-full" id="form-email" type="email" name="form-email" placeholder="nombre@dominio.com" required />
+                                    <input class="input-md form-full" id="form-email8gb" type="email" name="form-email8gb" placeholder="nombre@dominio.com" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Celular: *</label>
-                                    <input class="input-md form-full" id="form-phone" maxlength="12" type="tel" name="form-phone" placeholder="011 3456 789" required />
+                                    <input class="input-md form-full" id="form-phone8gb" maxlength="12" type="tel" name="form-phone8gb" placeholder="011 3456 789" required />
                                 </div>
                             </div>
-                            <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="8GB">
-                            <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="<?php echo $ktoken ?>">
+                            <input class="input-md form-full" type="hidden" id="form-plan8gb" name="form-plan8gb" value="8GB">
+                            <input class="input-md form-full" type="hidden" id="form-ktoken8gb" name="form-ktoken8gb" value="<?php echo $ktoken ?>">
+                            <input class="input-md form-full" type="hidden" id="form-gen8gb" name="form-gen8gb" value="gen2">
                              <div class="col-md-12">
                               <div class="form-field-wrapper text-left">
                                 <p>*Campos obligatorios</p>
@@ -220,7 +221,7 @@ use yii\helpers\Url;
                             </div>
                         <div class="tapaform" id="form12gb" style="display:none;">
                         <a style="color: #555555; background-color: transparent;position: absolute;left: 85%;z-index: 20;" class="btn btn-md btn-color" onclick="hide12gb()">x</a>
-                        <form id="contact" class="contact-form row" role="form">
+                        <form id="contact12gb" class="contact-form row" role="form">
                         <div class="col-md-12 text-center" style="height: 42px">
                                 <h5 class="successContent12GB" style="color: #5cb45d; font-size: 14px">
                                     <i class="fa fa-check left" style="color: #5cb45d;"></i>¡Tu mensaje se envió correctamente!
@@ -232,23 +233,24 @@ use yii\helpers\Url;
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Nombre completo: *</label>
-                                    <input class="input-md form-full" id="form-name" type="text" name="form-name" placeholder="María Perez" required />
+                                    <input class="input-md form-full" id="form-name12gb" type="text" name="form-name12gb" placeholder="María Perez" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="email">Email: *</label>
-                                    <input class="input-md form-full" id="form-email" type="email" name="form-email" placeholder="nombre@dominio.com" required />
+                                    <input class="input-md form-full" id="form-email12gb" type="email" name="form-email12gb" placeholder="nombre@dominio.com" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Celular: *</label>
-                                    <input class="input-md form-full" id="form-phone" maxlength="12" type="tel" name="form-phone" placeholder="011 3456 789" required />
+                                    <input class="input-md form-full" id="form-phone12gb" maxlength="12" type="tel" name="form-phone12gb" placeholder="011 3456 789" required />
                                 </div>
                             </div>
-                            <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="12GB">
-                            <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="<?php echo $ktoken ?>">
+                            <input class="input-md form-full" type="hidden" id="form-plan12gb" name="form-plan12gb" value="12GB">
+                            <input class="input-md form-full" type="hidden" id="form-ktoken12gb" name="form-ktoken12gb" value="<?php echo $ktoken ?>">
+                            <input class="input-md form-full" type="hidden" id="form-gen12gb" name="form-gen12gb" value="gen3">
                              <div class="col-md-12">
                               <div class="form-field-wrapper text-left">
                                 <p>*Campos obligatorios</p>
@@ -288,7 +290,7 @@ use yii\helpers\Url;
                             </div>
                             <div class="tapaform" id="form20gb" style="display:none;">
                             <a style="color: #555555; background-color: transparent;position: absolute;left: 85%;z-index: 20;" class="btn btn-md btn-color" onclick="hide20gb()">x</a>
-                        <form id="contact" class="contact-form row" role="form" method="post">
+                        <form id="contact20gb" class="contact-form row" role="form" method="post">
                         <div class="col-md-12 text-center" style="height: 42px">
                                 <h5 class="successContent20GB" style="color: #5cb45d; font-size: 14px">
                                     <i class="fa fa-check left" style="color: #5cb45d;"></i>¡Tu mensaje se envió correctamente!
@@ -300,23 +302,24 @@ use yii\helpers\Url;
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Nombre completo: *</label>
-                                    <input class="input-md form-full" id="form-name" type="text" name="form-name" placeholder="María Perez" required />
+                                    <input class="input-md form-full" id="form-name20gb" type="text" name="form-name20gb" placeholder="María Perez" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="email">Email: *</label>
-                                    <input class="input-md form-full" id="form-email" type="email" name="form-email" placeholder="nombre@dominio.com" required />
+                                    <input class="input-md form-full" id="form-email20gb" type="email" name="form-email20gb" placeholder="nombre@dominio.com" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Celular: *</label>
-                                    <input class="input-md form-full" id="form-phone" maxlength="12" type="tel" name="form-phone" placeholder="011 3456 789" required />
+                                    <input class="input-md form-full" id="form-phone20gb" maxlength="12" type="tel" name="form-phone20gb" placeholder="011 3456 789" required />
                                 </div>
                             </div>
-                            <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="20GB">
-                            <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="<?php echo $ktoken ?>">
+                            <input class="input-md form-full" type="hidden" id="form-plan20gb" name="form-plan20gb" value="20GB">
+                            <input class="input-md form-full" type="hidden" id="form-ktoken20gb" name="form-ktoken20gb" value="<?php echo $ktoken ?>">
+                            <input class="input-md form-full" type="hidden" id="form-gen20gb" name="form-gen20gb" value="gen4">
                              <div class="col-md-12">
                               <div class="form-field-wrapper text-left">
                                 <p>*Campos obligatorios</p>

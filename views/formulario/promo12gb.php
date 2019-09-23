@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 use yii\helpers\Html;
 use yii\helpers\Url;
 ?>
@@ -21,9 +21,9 @@ use yii\helpers\Url;
     <link href="<?= Url::to('@web/portabilidad/css/style.css') ?>" rel="stylesheet" type="text/css" />
     <link href="<?= Url::to('@web/portabilidad/css/bootstrap.css') ?>" rel="stylesheet" type="text/css" />
     <link href="<?= Url::to('@web/portabilidad/css/plugins/animate.css') ?>" rel="stylesheet" type="text/css" />
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -58,41 +58,48 @@ use yii\helpers\Url;
                     <div class="container" style="height: 100%">
                 <div class="intro-content">
                     <div class="intro-content-inner">
-                            <div class="lefto col-lg-5 col-md-12" style="float: right">
+                           <div class="lefto col-lg-5 col-md-12" style="float: right">
                             <h2 class="title-pasate" style="margin-bottom: 0px; color: white; font-weight: 600;">PLAN 12GB</h2>
                             <h1 class="intro-title" style="font-weight: 800; color: white"><strong style="color: #FFD517">50%</strong> de descuento</h1>
                             <h4 class="alt-title intro-sub-title" style="color: white">por 12 meses</h4>
-                            <h5 class="alt-title intro-sub-title" style="color: white;padding-bottom: 20px;">¡Envianos tus datos para aprovechar la promoción!</h5>
+                            <h5 class="alt-title intro-sub-title" style="color: white;">¡Envianos tus datos para aprovechar la promoción!</h5>
+                            <h5 class="alt-title intro-sub-title bye" style="color: white;text-transform: none;font-size: 16px;"><i class="fa fa-whatsapp" style="font-size: 22px;color: mediumaquamarine"></i> Whatsapp gratis</h5>
+                            <h5 class="alt-title intro-sub-title bye" style="color: white;text-transform: none;font-size: 16px;"><i class="fa fa-check-circle-o" style="font-size: 22px;color: mediumaquamarine"></i> Llamadas ilimitadas a cualquier compañía a todo el país</h5>
+                            <h5 class="alt-title intro-sub-title bye" style="color: white;text-transform: none;font-size: 16px;"><i class="fa fa-check-circle-o" style="font-size: 22px;color: mediumaquamarine"></i> SMS ilimitados a cualquier compañía</h5>
                         </div>
                 <div class="container text-center col-lg-5 col-md-12" style="background-color: white; border-radius: 15px; padding-top: 50px; padding-bottom: 50px; float: left">
                 <!-- Contact form -->
                 <div class="row">
                     <div class="col-lg-10 col-md-10 offset-md-1">
-                        <form id="contact" class="contact-form row" role="form">
-                            <div class="col-md-12 text-center">
-                                <h5 class="successContent12GB">
-                                    <i class="fa fa-check left" style="color: #5cb45d;"></i>¡Tu mensaje se envió correctamente!
+                        <div class="col-md-12 text-center successContent12GB" style="  height: 107%;background-color: white;position: absolute;z-index: 30;left: 0;top: 0;">
+                                <h5 class="" style="color: #5cb45d;font-size: 20px;font-weight: bold;margin-top: 30%;">¡Muchas gracias! Pronto nos contactaremos con vos.
                                 </h5>
-                                <h5 class="errorContent12GB" style="color: #e1534f;">
-                                    <i class="fa fa-exclamation-circle left"></i>Hubo un problema. Verificá que tus datos estén correctos.
+                                <h5 class="" style="color: #5cb45d; font-size: 60px">
+                                    <i class="fa fa-check-circle center" style="color: #5cb45d;"></i>
+                                </h5>
+                            </div>
+                        <form id="contact" class="contact-form row" role="form">
+                            <div class="col-md-12 text-center" style="height: 20px">
+                                <h5 class="errorContent12GB rojo">
+                                    <i class="fa fa-exclamation-circle left"></i>Ups. Verificá que tus datos estén correctos.
                                 </h5>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Nombre completo: *</label>
-                                    <input class="input-md form-full" id="form-name" type="text" name="form-name" placeholder="María Perez" required />
+                                    <input class="input-md form-full" id="form-name" type="text" name="form-name" placeholder="Tu nombre" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="email">Email: *</label>
-                                    <input class="input-md form-full" id="form-email" type="email" name="form-email" placeholder="nombre@dominio.com" required />
+                                    <input class="input-md form-full" id="form-email" type="email" name="form-email" placeholder="Tu mail" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Celular: *</label>
-                                    <input class="input-md form-full" id="form-phone" maxlength="12" type="tel" name="form-phone" placeholder="011 3456 789" required />
+                                    <input class="input-md form-full" id="form-phone" maxlength="12" type="tel" name="form-phone" placeholder="Tu número" required />
                                 </div>
                             </div>
                             <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="12GB">
@@ -103,7 +110,7 @@ use yii\helpers\Url;
                                 <p>*Campos obligatorios</p>
                             </div>    
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12" style="padding-bottom: 20px">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
                             </div>
 

@@ -51,18 +51,22 @@
                     if (gen=='gen1'){
                         $('.successContent5GB').fadeIn(1000);
                         $('.errorContent5GB').fadeOut(500);
+                        borrarCampos();
                     }
                     if (gen=='gen2'){
                         $('.successContent8GB').fadeIn(1000);
                         $('.errorContent8GB').fadeOut(500);
+                        borrarCampos();
                     }
                     if (gen=='gen3'){
                         $('.successContent12GB').fadeIn(1000);
                         $('.errorContent12GB').fadeOut(500);
+                        borrarCampos();
                     }
                     if (gen=='gen4'){
                         $('.successContent20GB').fadeIn(1000);
                         $('.errorContent20GB').fadeOut(500);
+                        borrarCampos();
                     }
                 },
                 error: function (exception) {
@@ -115,11 +119,11 @@
                 success: function (data) {
                     $('.successContent8GB').fadeIn(1000);
                     $('.errorContent8GB').fadeOut(500);
+                    borrarCampos();
                 },
                 error: function (exception,data) {
                     $('.errorContent8GB').fadeIn(1000);
-                    $('.successContent8GB').fadeOut(500);                        
-                }
+                    $('.successContent8GB').fadeOut(500);     }
             });
         }
         else {
@@ -152,11 +156,11 @@
                 success: function (data) {
                     $('.successContent12GB').fadeIn(1000);
                     $('.errorContent12GB').fadeOut(500);
+                    borrarCampos();
                 },
                 error: function (exception) {
                     $('.errorContent12GB').fadeIn(1000);
-                    $('.successContent12GB').fadeOut(500);                        
-                }
+                    $('.successContent12GB').fadeOut(500);   }
             });
         }
         else {
@@ -189,11 +193,11 @@
                 success: function (data) {
                     $('.successContent20GB').fadeIn(1000);
                     $('.errorContent20GB').fadeOut(500);
+                    borrarCampos();
                 },
                 error: function (exception) {
                     $('.errorContent20GB').fadeIn(1000);
-                    $('.successContent20GB').fadeOut(500);                        
-                }
+                    $('.successContent20GB').fadeOut(500);   }
             });
         }
         else {
@@ -202,6 +206,21 @@
         }
         return false;
     });
+    
+function borrarCampos(){
+    $("#form-name").val("");
+    $("#form-email").val("");
+    $("#form-phone").val("");
+    $("#form-name8gb").val("");
+    $("#form-email8gb").val("");
+    $("#form-phone8gb").val("");
+    $("#form-name12gb").val("");
+    $("#form-email12gb").val("");
+    $("#form-phone12gb").val("");
+    $("#form-name20gb").val("");
+    $("#form-email20gb").val("");
+    $("#form-phone20gb").val("");
+}    
   
 })(jQuery);
 

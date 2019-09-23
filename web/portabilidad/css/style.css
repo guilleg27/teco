@@ -303,7 +303,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     margin-top: 0px;
     line-height: 1.5;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 h1 {
@@ -660,6 +660,15 @@ i.right {
         color: #fff;
     }
 
+    .title-pasate {
+    margin-top: 20px;
+}
+
+    .rojo {
+    color: #e1534f;
+    font-size: 14px;
+}
+
 /*------------------------------------------------------------------*/
 /* Form Style */
 /*------------------------------------------------------------------*/
@@ -719,8 +728,8 @@ button, input, textarea, select {
         }
 
         input.input-md, .input-md {
-            padding-top: 13px;
-            padding-bottom: 13px;
+            padding-top: 8px;
+            padding-bottom: 8px;
         }
 
         input.input-lg, .input-lg {
@@ -1686,9 +1695,18 @@ form label.error {
         margin-bottom: 0px;
 }
     
+.bye {
+display: none;
+}  
+    
+.rojo {
+    color: #e1534f;
+    font-size: 11px;
+}    
+    
 h5.alt-title {
     font-size: 12px;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 }    
     
     .highlight.portabilidad {
@@ -4118,7 +4136,7 @@ form .error {
 
 .highlight.portabilidad {
     background: url(../img/fondo-persona-desktop.jpg) center center no-repeat;
-    height: 300px;
+    height: 220px;
     background-size: cover;
     background-color: #8ee3ea;
     /* background-color: #000; */

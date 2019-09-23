@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 use yii\helpers\Html;
 use yii\helpers\Url;
 ?>
@@ -54,7 +54,7 @@ use yii\helpers\Url;
         <!-- End Header -->
 
         <!-- Page Intro -->
-        <section id="inner-intro" class="container-fluid no-padding highlight portabilidad" data-background-img="img/fondo-persona-desktop.jpg">
+        <section id="inner-intro" class="container-fluid no-padding highlight portabilidad" data-background-img="<?= Url::to('@web/portabilidad/img/fondo-persona.jpg') ?>">
                             <div class="intro-content">
                         <div class="intro-content-inner">
                            <h2 class="lefto title-pasate" style="margin-bottom: 0px; color: white">Pasate a Personal</h2>
@@ -66,7 +66,7 @@ use yii\helpers\Url;
         
         <!-- End Page Intro -->
         
-             <section class="section-padding" id="pricing" style="padding-bottom: 0px;">
+             <section class="section-padding" id="pricing" style="padding-bottom: 0px; padding-top: 30px">
             <div class="container text-center">
                 <h1 class="" style="font-weight: 500;">Elegí tu plan</h1>
                 <h5 class="alt-title intro-sub-title">¡Envianos tus datos para aprovechar la promoción!</h5>
@@ -78,32 +78,36 @@ use yii\helpers\Url;
                                 <h1 class="alt-title" style="font-size: 30px; color: #00B7D7;">Plan 5GB</h1>
                             </div>
                                 <div class="tapaform" id="form5gb" style="display:none;">
-                                 <a style="color: #555555; background-color: transparent;position: absolute;left: 85%;z-index: 20;" class="btn btn-md btn-color" onclick="hide5gb()">x</a>
-                        <form id="contact" class="contact-form row" role="form">
-                        <div class="col-md-12 text-center" style="height: 42px">
-                                <h5 class="successContent5GB" style="color: #5cb45d; font-size: 14px">
-                                    <i class="fa fa-check left" style="color: #5cb45d;"></i>¡Tu mensaje se envió correctamente!
+                                 <a style="position: absolute;left: 85%;top: -18%;z-index: 20;padding: 6px 8px !important;color: white;" class="btn btn-md btn-color" onclick="hide5gb()">x</a>
+                                <div class="col-md-12 text-center successContent5GB" style="  height: 107%;background-color: white;position: absolute;z-index: 30">
+                                <h5 class="" style="color: #5cb45d;font-size: 20px;font-weight: bold;margin-top: 25%;">¡Muchas gracias! Pronto nos contactaremos con vos.
                                 </h5>
-                                <h5 class="errorContent5GB" style="color: #e1534f; font-size: 14px">
-                                    <i class="fa fa-exclamation-circle left"></i>Hubo un problema. Verificá que tus datos estén correctos.
+                                <h5 class="" style="color: #5cb45d; font-size: 60px">
+                                    <i class="fa fa-check-circle center" style="color: #5cb45d;"></i>
+                                </h5>
+                            </div>
+                        <form id="contact" class="contact-form row" role="form" autocomplete="off">
+                        <div class="col-md-12 text-center" style="height: 40px">
+                                <h5 class="errorContent5GB" style="color: #e1534f; font-size: 14px; font-weight: 600">
+                                    <i class="fa fa-exclamation-circle left"></i>Ups. Verificá que tus datos estén correctos.
                                 </h5>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Nombre completo: *</label>
-                                    <input class="input-md form-full" id="form-name" type="text" name="form-name" placeholder="María Perez" required />
+                                    <input class="input-md form-full" id="form-name" type="text" name="form-name" placeholder="Tu nombre" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="email">Email: *</label>
-                                    <input class="input-md form-full" id="form-email" type="email" name="form-email" placeholder="nombre@dominio.com" required />
+                                    <input class="input-md form-full" id="form-email" type="email" name="form-email" placeholder="Tu mail" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Celular: *</label>
-                                    <input class="input-md form-full" id="form-phone" maxlength="12" type="tel" name="form-phone" placeholder="011 3456 789" required />
+                                    <input class="input-md form-full" id="form-phone" maxlength="12" type="tel" name="form-phone" placeholder="Tu número" required />
                                 </div>
                             </div>
                             <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="5GB">
@@ -131,9 +135,9 @@ use yii\helpers\Url;
                                         <span class="pricing-price-sm">/ mes</span>
                                     </p>
                                 </div></li>
-                                        <li>Whatsapp gratis</li>
-                                        <li>Llamadas ilimitadas a <strong>cualquier</strong> compañía a todo el país</li>
-                                        <li>SMS ilimitados a cualquier compañía</li>
+                                        <li><i class="fa fa-whatsapp" style="color: #5cb45d; font-size: 18px"></i> <strong>Whatsapp gratis</strong></li>
+                                        <li><i class="fa fa-check-circle-o" style="color: #5cb45d; font-size: 18px"></i> <strong>Llamadas ilimitadas</strong> a cualquier compañía a todo el país</li>
+                                        <li><i class="fa fa-check-circle-o" style="color: #5cb45d; font-size: 18px"></i> <strong>SMS ilimitados</strong> a cualquier compañía</li>
                                     </ul>
                                 </div>
                                 <div class="pricing-button">
@@ -149,32 +153,36 @@ use yii\helpers\Url;
                                 <h1 class="alt-title" style="font-size: 30px; color: #00B7D7;">Plan 8GB</h1>
                             </div>
                            <div class="tapaform" id="form8gb" style="display:none;">
-                           <a style="color: #555555; background-color: transparent;position: absolute;left: 85%;z-index: 20;" class="btn btn-md btn-color" onclick="hide8gb()">x</a>
-                        <form id="contact8gb" class="contact-form row" role="form">
-                        <div class="col-md-12 text-center" style="height: 42px">
-                                <h5 class="successContent8GB" style="color: #5cb45d; font-size: 14px">
-                                    <i class="fa fa-check left" style="color: #5cb45d;"></i>¡Tu mensaje se envió correctamente!
+                           <a style="position: absolute;left: 85%;top: -18%;z-index: 20;padding: 6px 8px !important;color: white;" class="btn btn-md btn-color" onclick="hide8gb()">x</a>
+                                <div class="col-md-12 text-center successContent8GB" style="  height: 107%;background-color: white;position: absolute;z-index: 30">
+                                <h5 class="" style="color: #5cb45d;font-size: 20px;font-weight: bold;margin-top: 25%;">¡Muchas gracias! Pronto nos contactaremos con vos.
                                 </h5>
-                                <h5 class="errorContent8GB" style="color: #e1534f; font-size: 14px">
-                                    <i class="fa fa-exclamation-circle left"></i>Hubo un problema. Verificá que tus datos estén correctos.
+                                <h5 class="" style="color: #5cb45d; font-size: 60px">
+                                    <i class="fa fa-check-circle center" style="color: #5cb45d;"></i>
+                                </h5>
+                            </div>
+                        <form id="contact8gb" class="contact-form row" role="form" autocomplete="off">
+                        <div class="col-md-12 text-center" style="height: 40px">
+                                <h5 class="errorContent8GB" style="color: #e1534f; font-size: 14px; font-weight: 600">
+                                    <i class="fa fa-exclamation-circle left"></i>Ups. Verificá que tus datos estén correctos.
                                 </h5>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Nombre completo: *</label>
-                                    <input class="input-md form-full" id="form-name8gb" type="text" name="form-name8gb" placeholder="María Perez" required />
+                                    <input class="input-md form-full" id="form-name8gb" type="text" name="form-name8gb" placeholder="Tu nombre" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="email">Email: *</label>
-                                    <input class="input-md form-full" id="form-email8gb" type="email" name="form-email8gb" placeholder="nombre@dominio.com" required />
+                                    <input class="input-md form-full" id="form-email8gb" type="email" name="form-email8gb" placeholder="Tu mail" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Celular: *</label>
-                                    <input class="input-md form-full" id="form-phone8gb" maxlength="12" type="tel" name="form-phone8gb" placeholder="011 3456 789" required />
+                                    <input class="input-md form-full" id="form-phone8gb" maxlength="12" type="tel" name="form-phone8gb" placeholder="Tu número" required />
                                 </div>
                             </div>
                             <input class="input-md form-full" type="hidden" id="form-plan8gb" name="form-plan8gb" value="8GB">
@@ -202,9 +210,9 @@ use yii\helpers\Url;
                                         <span class="pricing-price-sm">/ mes</span>
                                     </p>
                                 </div></li>
-                                        <li>Whatsapp gratis</li>
-                                        <li>Llamadas ilimitadas a <strong>cualquier</strong> compañía a todo el país</li>
-                                        <li>SMS ilimitados a cualquier compañía</li>
+                                        <li><i class="fa fa-whatsapp" style="color: #5cb45d; font-size: 18px"></i> <strong>Whatsapp gratis</strong></li>
+                                        <li><i class="fa fa-check-circle-o" style="color: #5cb45d; font-size: 18px"></i> <strong>Llamadas ilimitadas</strong> a cualquier compañía a todo el país</li>
+                                        <li><i class="fa fa-check-circle-o" style="color: #5cb45d; font-size: 18px"></i> <strong>SMS ilimitados</strong> a cualquier compañía</li>
                                     </ul>
                                 </div>
                                 <div class="pricing-button">
@@ -220,32 +228,36 @@ use yii\helpers\Url;
                                 <h1 class="alt-title" style="font-size: 30px; color: #00B7D7;">Plan 12GB</h1>
                             </div>
                         <div class="tapaform" id="form12gb" style="display:none;">
-                        <a style="color: #555555; background-color: transparent;position: absolute;left: 85%;z-index: 20;" class="btn btn-md btn-color" onclick="hide12gb()">x</a>
-                        <form id="contact12gb" class="contact-form row" role="form">
-                        <div class="col-md-12 text-center" style="height: 42px">
-                                <h5 class="successContent12GB" style="color: #5cb45d; font-size: 14px">
-                                    <i class="fa fa-check left" style="color: #5cb45d;"></i>¡Tu mensaje se envió correctamente!
+                        <a style="position: absolute;left: 85%;top: -18%;z-index: 20;padding: 6px 8px !important;color: white;" class="btn btn-md btn-color" onclick="hide12gb()">x</a>
+                                <div class="col-md-12 text-center successContent12GB" style="  height: 107%;background-color: white;position: absolute;z-index: 30">
+                                <h5 class="" style="color: #5cb45d;font-size: 20px;font-weight: bold;margin-top: 25%;">¡Muchas gracias! Pronto nos contactaremos con vos.
                                 </h5>
-                                <h5 class="errorContent12GB" style="color: #e1534f; font-size: 14px">
-                                    <i class="fa fa-exclamation-circle left"></i>Hubo un problema. Verificá que tus datos estén correctos.
+                                <h5 class="" style="color: #5cb45d; font-size: 60px">
+                                    <i class="fa fa-check-circle center" style="color: #5cb45d;"></i>
+                                </h5>
+                            </div>
+                        <form id="contact12gb" class="contact-form row" role="form" autocomplete="off">
+                        <div class="col-md-12 text-center" style="height: 40px">
+                                <h5 class="errorContent12GB" style="color: #e1534f; font-size: 14px; font-weight: 600">
+                                    <i class="fa fa-exclamation-circle left"></i>Ups. Verificá que tus datos estén correctos.
                                 </h5>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Nombre completo: *</label>
-                                    <input class="input-md form-full" id="form-name12gb" type="text" name="form-name12gb" placeholder="María Perez" required />
+                                    <input class="input-md form-full" id="form-name12gb" type="text" name="form-name12gb" placeholder="Tu nombre" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="email">Email: *</label>
-                                    <input class="input-md form-full" id="form-email12gb" type="email" name="form-email12gb" placeholder="nombre@dominio.com" required />
+                                    <input class="input-md form-full" id="form-email12gb" type="email" name="form-email12gb" placeholder="Tu mail" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Celular: *</label>
-                                    <input class="input-md form-full" id="form-phone12gb" maxlength="12" type="tel" name="form-phone12gb" placeholder="011 3456 789" required />
+                                    <input class="input-md form-full" id="form-phone12gb" maxlength="12" type="tel" name="form-phone12gb" placeholder="Tu número" required />
                                 </div>
                             </div>
                             <input class="input-md form-full" type="hidden" id="form-plan12gb" name="form-plan12gb" value="12GB">
@@ -272,9 +284,9 @@ use yii\helpers\Url;
                                     <span class="pricing-price-sm">/ mes</span>
                                 </p>
                             </div></li>
-                                    <li>Whatsapp gratis</li>
-                                    <li>Llamadas ilimitadas a <strong>cualquier</strong> compañía a todo el país</li>
-                                    <li>SMS ilimitados a cualquier compañía</li>
+                                    <li><i class="fa fa-whatsapp" style="color: #5cb45d; font-size: 18px"></i> <strong>Whatsapp gratis</strong></li>
+                                        <li><i class="fa fa-check-circle-o" style="color: #5cb45d; font-size: 18px"></i> <strong>Llamadas ilimitadas</strong> a cualquier compañía a todo el país</li>
+                                        <li><i class="fa fa-check-circle-o" style="color: #5cb45d; font-size: 18px"></i> <strong>SMS ilimitados</strong> a cualquier compañía</li>
                                 </ul>
                             </div>
                             <div class="pricing-button">
@@ -289,32 +301,36 @@ use yii\helpers\Url;
                                 <h1 class="alt-title" style="font-size: 30px; color: #00B7D7;">Plan 20GB</h1>
                             </div>
                             <div class="tapaform" id="form20gb" style="display:none;">
-                            <a style="color: #555555; background-color: transparent;position: absolute;left: 85%;z-index: 20;" class="btn btn-md btn-color" onclick="hide20gb()">x</a>
-                        <form id="contact20gb" class="contact-form row" role="form" method="post">
-                        <div class="col-md-12 text-center" style="height: 42px">
-                                <h5 class="successContent20GB" style="color: #5cb45d; font-size: 14px">
-                                    <i class="fa fa-check left" style="color: #5cb45d;"></i>¡Tu mensaje se envió correctamente!
+                            <a style="position: absolute;left: 85%;top: -18%;z-index: 20;padding: 6px 8px !important;color: white;" class="btn btn-md btn-color" onclick="hide20gb()">x</a>
+                                <div class="col-md-12 text-center successContent20GB" style="  height: 107%;background-color: white;position: absolute;z-index: 30">
+                                <h5 class="" style="color: #5cb45d;font-size: 20px;font-weight: bold;margin-top: 25%;">¡Muchas gracias! Pronto nos contactaremos con vos.
                                 </h5>
-                                <h5 class="errorContent20GB" style="color: #e1534f; font-size: 14px">
-                                    <i class="fa fa-exclamation-circle left"></i>Hubo un problema. Verificá que tus datos estén correctos.
+                                <h5 class="" style="color: #5cb45d; font-size: 60px">
+                                    <i class="fa fa-check-circle center" style="color: #5cb45d;"></i>
+                                </h5>
+                            </div>
+                        <form id="contact20gb" class="contact-form row" role="form" method="post" autocomplete="off">
+                        <div class="col-md-12 text-center" style="height: 40px">
+                                <h5 class="errorContent20GB" style="color: #e1534f; font-size: 14px; font-weight: 600">
+                                    <i class="fa fa-exclamation-circle left"></i>Ups. Verificá que tus datos estén correctos.
                                 </h5>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Nombre completo: *</label>
-                                    <input class="input-md form-full" id="form-name20gb" type="text" name="form-name20gb" placeholder="María Perez" required />
+                                    <input class="input-md form-full" id="form-name20gb" type="text" name="form-name20gb" placeholder="Tu nombre" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="email">Email: *</label>
-                                    <input class="input-md form-full" id="form-email20gb" type="email" name="form-email20gb" placeholder="nombre@dominio.com" required />
+                                    <input class="input-md form-full" id="form-email20gb" type="email" name="form-email20gb" placeholder="Tu mail" required />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-field-wrapper text-left">
                                    <label for="name">Celular: *</label>
-                                    <input class="input-md form-full" id="form-phone20gb" maxlength="12" type="tel" name="form-phone20gb" placeholder="011 3456 789" required />
+                                    <input class="input-md form-full" id="form-phone20gb" maxlength="12" type="tel" name="form-phone20gb" placeholder="Tu número" required />
                                 </div>
                             </div>
                             <input class="input-md form-full" type="hidden" id="form-plan20gb" name="form-plan20gb" value="20GB">
@@ -341,9 +357,9 @@ use yii\helpers\Url;
                                     <span class="pricing-price-sm">/ mes</span>
                                 </p>
                             </div></li>
-                                    <li>Whatsapp gratis</li>
-                                    <li>Llamadas ilimitadas a <strong>cualquier</strong> compañía a todo el país</li>
-                                    <li>SMS ilimitados a cualquier compañía</li>
+                                    <li><i class="fa fa-whatsapp" style="color: #5cb45d; font-size: 18px"></i> <strong>Whatsapp gratis</strong></li>
+                                        <li><i class="fa fa-check-circle-o" style="color: #5cb45d; font-size: 18px"></i> <strong>Llamadas ilimitadas</strong> a cualquier compañía a todo el país</li>
+                                        <li><i class="fa fa-check-circle-o" style="color: #5cb45d; font-size: 18px"></i> <strong>SMS ilimitados</strong> a cualquier compañía</li>
                                 </ul>
                             </div>
                             <div class="pricing-button">
@@ -526,7 +542,7 @@ use yii\helpers\Url;
     <script>function hide5gb() {
    document.getElementById('form5gb').style.display = "none";
 }
-</script>   
+</script>    
     <script>function show8gb() {
    document.getElementById('form8gb').style.display = "block";
 }
@@ -534,7 +550,7 @@ use yii\helpers\Url;
 <script>function hide8gb() {
    document.getElementById('form8gb').style.display = "none";
 }
-</script> 
+</script>    
     <script>function show12gb() {
    document.getElementById('form12gb').style.display = "block";
 }
@@ -542,7 +558,7 @@ use yii\helpers\Url;
        <script>function hide12gb() {
    document.getElementById('form12gb').style.display = "none";
 }
-</script> 
+</script>    
     <script>function show20gb() {
    document.getElementById('form20gb').style.display = "block";
 }

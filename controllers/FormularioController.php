@@ -58,12 +58,23 @@ class FormularioController extends Controller
      */
     public function actionIndex()
     {
+        $params        = [];
+        $request       = Yii::$app->request;
+        $get           = $request->get();
+        $startDate     = $request->get('startDate') ? $request->get('startDate') : date('Y-m-d',strtotime('yesterday'));
+        $endDate       = $request->get('endDate') ? $request->get('endDate') : date('Y-m-d',strtotime('NOW'));
+
+        $params['startDate']   = $startDate;
+        $params['endDate']     = $endDate;
+
         $searchModel = new FormularioSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search($params);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'startDate'    => $startDate,
+            'endDate'      => $endDate,
         ]);
     }
 

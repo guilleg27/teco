@@ -34,7 +34,7 @@ class Formulario extends \yii\db\ActiveRecord
             [['nombre_completo', 'email', 'celular', 'date', 'ktoken', 'plan'], 'required'],
             [['date'], 'safe'],
             [['plan'], 'string'],
-            [['nombre_completo', 'email', 'celular', 'ktoken'], 'string', 'max' => 255],
+            [['nombre_completo', 'email', 'celular', 'ktoken', 'pais', 'ciudad', 'carrier'], 'string', 'max' => 255],
         ];
     }
 
@@ -48,9 +48,12 @@ class Formulario extends \yii\db\ActiveRecord
             'nombre_completo' => 'Nombre Completo',
             'email' => 'Email',
             'celular' => 'Celular',
-            'date' => 'Date',
+            'date' => 'Fecha',
             'ktoken' => 'Ktoken',
             'plan' => 'Plan',
+            'pais' => 'pais',
+            'ciudad' => 'ciudad',
+            'carrier' => 'carrier',
         ];
     }
 }

@@ -18,7 +18,7 @@ class FormularioSearch extends Formulario
     {
         return [
             [['id'], 'integer'],
-            [['nombre_completo', 'email', 'celular', 'date', 'ktoken', 'plan'], 'safe'],
+            [['nombre_completo', 'email', 'celular', 'date', 'ktoken', 'plan', 'pais', 'ciudad', 'carrier'], 'safe'],
         ];
     }
 
@@ -40,7 +40,17 @@ class FormularioSearch extends Formulario
      */
     public function search($params)
     {
+        if (isset($params["startDate"]) && isset($params["endDate"]))
+        {
+            $startDate = $params["startDate"];
+            $endDate   = $params["endDate"];
+        }else{
+            $startDate = date('Y-m-d',strtotime('yesterday'));
+            $endDate   = date('Y-m-d',strtotime('NOW'));
+        }
+
         $query = Formulario::find();
+        $query->where(['between', 'date', $startDate, date('Y-m-d',strtotime('+1 day' , strtotime($endDate))) ]);
 
         // add conditions that should always apply here
 
@@ -66,7 +76,10 @@ class FormularioSearch extends Formulario
             ->andFilterWhere(['like', 'email', $this->email])
             ->andFilterWhere(['like', 'celular', $this->celular])
             ->andFilterWhere(['like', 'ktoken', $this->ktoken])
-            ->andFilterWhere(['like', 'plan', $this->plan]);
+            ->andFilterWhere(['like', 'plan', $this->plan])
+            ->andFilterWhere(['like', 'pais', $this->pais])
+            ->andFilterWhere(['like', 'ciudad', $this->ciudad])
+            ->andFilterWhere(['like', 'carrier', $this->carrier]);
 
         return $dataProvider;
     }

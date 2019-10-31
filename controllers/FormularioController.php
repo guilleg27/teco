@@ -26,12 +26,12 @@ class FormularioController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb'],
+                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
                     [
-                        'actions' => ['promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb'],
+                        'actions' => ['promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -235,6 +235,16 @@ class FormularioController extends Controller
         $request = Yii::$app->request;
         $ktoken = $request->get('ktoken') ?: "empty";
         return $this->render('promo20gb', [
+            'ktoken' => $ktoken
+        ]);
+    }
+
+    public function actionTest()
+    {
+        $this->layout = 'vacio';
+        $request = Yii::$app->request;
+        $ktoken = $request->get('ktoken') ?: "empty";
+        return $this->render('test', [
             'ktoken' => $ktoken
         ]);
     }

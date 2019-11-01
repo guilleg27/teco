@@ -21,9 +21,10 @@ use yii\helpers\Url;
     <link href="<?= Url::to('@web/portabilidad/css/style.css') ?>" rel="stylesheet" type="text/css" />
     <link href="<?= Url::to('@web/portabilidad/css/bootstrap.css') ?>" rel="stylesheet" type="text/css" />
     <link href="<?= Url::to('@web/portabilidad/css/plugins/animate.css') ?>" rel="stylesheet" type="text/css" />
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?hl=es"></script>
 
 
 </head>
@@ -113,10 +114,11 @@ use yii\helpers\Url;
                             <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="5GB">
                             <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen" name="form-gen" value="gen1">
-                             <div class="col-md-12">
-                              <div class="form-field-wrapper text-left">
+                             <div class="col-md-12" style="display: flex;justify-content: flex-start;flex-flow: column; height: 95px;">
+                              <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
-                            </div>    
+                            </div> 
+<!--                             <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LcYocAUAAAAAAWTvUxvx3C6u-9RYGdRjr_fi1xg"></div>  -->  
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -127,11 +129,11 @@ use yii\helpers\Url;
                                <div>
                                 <div class="pricing-features">
                                     <ul>
-                                        <li style="text-decoration: line-through; font-size: 30px;">$1020</li>
+                                        <li style="text-decoration: line-through; font-size: 30px;">$1200</li>
                                         <li><div class="pricing-price">
                                     <p>
                                         <span class="dollar">$</span>
-                                        <span class="pricing-price-lg" style="font-weight: 600;">510</span>
+                                        <span class="pricing-price-lg" style="font-weight: 600;">600</span>
                                         <span class="pricing-price-sm">/ mes</span>
                                     </p>
                                 </div></li>
@@ -188,10 +190,11 @@ use yii\helpers\Url;
                             <input class="input-md form-full" type="hidden" id="form-plan8gb" name="form-plan8gb" value="8GB">
                             <input class="input-md form-full" type="hidden" id="form-ktoken8gb" name="form-ktoken8gb" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen8gb" name="form-gen8gb" value="gen2">
-                             <div class="col-md-12">
-                              <div class="form-field-wrapper text-left">
+                             <div class="col-md-12" style="display: flex;justify-content: flex-start;flex-flow: column; height: 95px;">
+                              <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
-                            </div>    
+                            </div> 
+<!--                             <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LccocAUAAAAAEUz5j03t5frczjj30IgnJGvP25_"></div>   --> 
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -202,11 +205,11 @@ use yii\helpers\Url;
                               <div>
                                 <div class="pricing-features">
                                     <ul>
-                                        <li style="text-decoration: line-through; font-size: 30px;">$1500</li>
+                                        <li style="text-decoration: line-through; font-size: 30px;">$1750</li>
                                         <li><div class="pricing-price">
                                     <p>
                                         <span class="dollar">$</span>
-                                        <span class="pricing-price-lg" style="font-weight: 600;">750</span>
+                                        <span class="pricing-price-lg" style="font-weight: 600;">875</span>
                                         <span class="pricing-price-sm">/ mes</span>
                                     </p>
                                 </div></li>
@@ -263,10 +266,11 @@ use yii\helpers\Url;
                             <input class="input-md form-full" type="hidden" id="form-plan12gb" name="form-plan12gb" value="12GB">
                             <input class="input-md form-full" type="hidden" id="form-ktoken12gb" name="form-ktoken12gb" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen12gb" name="form-gen12gb" value="gen3">
-                             <div class="col-md-12">
-                              <div class="form-field-wrapper text-left">
+                             <div class="col-md-12" style="display: flex;justify-content: flex-start;flex-flow: column;">
+                              <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
-                            </div>    
+                            </div> 
+<!--                             <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LchocAUAAAAAKdYYk4M39Ry-CSQjvdjt3jsAsBX"></div>   --> 
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -276,11 +280,11 @@ use yii\helpers\Url;
                             </div>
                             <div class="pricing-features">
                                 <ul>
-                                    <li style="text-decoration: line-through; font-size: 30px;">$1900</li>
+                                    <li style="text-decoration: line-through; font-size: 30px;">$2220</li>
                                     <li><div class="pricing-price">
                                 <p>
                                     <span class="dollar">$</span>
-                                    <span class="pricing-price-lg" style="font-weight: 600;">950</span>
+                                    <span class="pricing-price-lg" style="font-weight: 600; font-size: 4em;">1110</span>
                                     <span class="pricing-price-sm">/ mes</span>
                                 </p>
                             </div></li>
@@ -336,10 +340,11 @@ use yii\helpers\Url;
                             <input class="input-md form-full" type="hidden" id="form-plan20gb" name="form-plan20gb" value="20GB">
                             <input class="input-md form-full" type="hidden" id="form-ktoken20gb" name="form-ktoken20gb" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen20gb" name="form-gen20gb" value="gen4">
-                             <div class="col-md-12">
-                              <div class="form-field-wrapper text-left">
+                             <div class="col-md-12" style="display: flex;justify-content: flex-start;flex-flow: column;">
+                              <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
-                            </div>    
+                            </div> 
+<!--                             <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LckocAUAAAAAJCOIZPNWCUCkSKvNDW9tkytb6hY"></div>  -->  
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -349,11 +354,11 @@ use yii\helpers\Url;
                             </div>
                             <div class="pricing-features">
                                 <ul>
-                                    <li style="text-decoration: line-through; font-size: 30px;">$2400</li>
+                                    <li style="text-decoration: line-through; font-size: 30px;">$2800</li>
                                     <li><div class="pricing-price">
                                 <p>
                                     <span class="dollar">$</span>
-                                    <span class="pricing-price-lg" style="font-weight: 600; font-size: 4em;">1200</span>
+                                    <span class="pricing-price-lg" style="font-weight: 600; font-size: 4em;">1400</span>
                                     <span class="pricing-price-sm">/ mes</span>
                                 </p>
                             </div></li>
@@ -473,7 +478,7 @@ use yii\helpers\Url;
         
         <!-- Modal body -->
         <div class="modal-body" style="font-size: 12px">
-            PROMOCIÓN DE ALCANCE NACIONAL, VÁLIDA DESDE EL 02/09/2019 HASTA EL 31/10/2019, EXCLUSIVAMENTE PARA CLIENTES CON DNI. OFERTA DE DESCUENTO: VÁLIDA ÚNICAMENTE PARA LA MODALIDAD DE PORTABILIDAD CON LOS PLANES CONEXIÓN TOTAL CONTROL PORTA M, CONEXIÓN CONTROL FAMILIA L, BLACK CONEXIÓN TOTAL LIBRE 1XL Y BLACK CONEXIÓN TOTAL LIBRE 4XL (PRECIOS REGULARES DE LOS ABONOS MENSUALES $1.020; $1.500; $1.900 Y $2.400, RESPECTIVAMENTE). EL CLIENTE ACCEDE AL 50% DE DESCUENTO SOBRE EL VALOR DEL PLAN CONEXIÓN TOTAL CONTROL PORTA M, CONEXIÓN CONTROL FAMILIA L, BLACK CONEXIÓN TOTAL LIBRE 1XL Y BLACK CONEXIÓN TOTAL LIBRE 4XL DURANTE 12 MESES. EL DESCUENTO SE EFECTÚA SOBRE EL PRECIO REGULAR DEL ABONO VIGENTE AL MOMENTO DE LA APLICACIÓN. PARA HACER USO DE LA LÍNEA, LA MISMA DEBERÁ ENCONTRARSE ACTIVA SIN NINGÚN TIPO DE RESTRICCIÓN. OFERTA HABILITADA SOLO PARA USO PERSONAL, ESTÁ TOTALMENTE PROHIBIDO SU REVENTA Y/O USO COMERCIAL. LA DETECCIÓN DE SU USO INDEBIDO HABILITA A TELECOM ARGENTINA S.A A LA SUSPENSIÓN DE LA LÍNEA. MÁS INFORMACIÓN DE LOS PLANES EN WWW.PERSONAL.COM.AR/TIENDA/PLANES/ O *111. PROMOCIÓN NO ACUMULABLE CON OTROS DESCUENTOS. PRECIOS CONSUMIDOR FINAL CON IVA INCLUIDO. TELECOM ARGENTINA S.A. ALICIA MOREAU DE JUSTO 50. C.A.B.A. CUIT 30-63945373-8.
+            PROMOCIÓN DE ALCANCE NACIONAL, VÁLIDA DESDE EL 01/11/2019 HASTA EL 31/01/2020, EXCLUSIVAMENTE PARA CLIENTES CON DNI. OFERTA DE DESCUENTO: VÁLIDA ÚNICAMENTE PARA LA MODALIDAD DE PORTABILIDAD CON LOS PLANES CONEXIÓN TOTAL CONTROL PORTA M, CONEXIÓN CONTROL FAMILIA L, BLACK CONEXIÓN TOTAL LIBRE 1XL Y BLACK CONEXIÓN TOTAL LIBRE 4XL. PRECIOS REGULARES MENSUALES DE LOS ABONOS HASTA EL 17/11/2019 $1.020, $1.500, $1.900 Y $2.400, RESPECTIVAMENTE; A PARTIR DEL 18/11/2019 $1.200, $1.750, $2.220 Y $2.800, RESPECTIVAMENTE. EL CLIENTE ACCEDE AL 50% DE DESCUENTO SOBRE EL VALOR DEL PLAN DURANTE 12 MESES. EL DESCUENTO SE EFECTÚA SOBRE EL PRECIO REGULAR DEL ABONO VIGENTE AL MOMENTO DE LA APLICACIÓN. PROMOCIÓN NO ACUMULABLE CON OTROS DESCUENTOS. PRECIOS PARA CONSUMIDOR FINAL. PARA HACER USO DE LA LÍNEA, LA MISMA DEBERÁ ENCONTRARSE ACTIVA SIN NINGÚN TIPO DE RESTRICCIÓN. OFERTA HABILITADA SOLO PARA USO PERSONAL, ESTÁ TOTALMENTE PROHIBIDO SU REVENTA Y/O USO COMERCIAL. LA DETECCIÓN DE SU USO INDEBIDO HABILITA A TELECOM ARGENTINA S.A A LA SUSPENSIÓN DE LA LÍNEA. MÁS INFORMACIÓN DE LOS PLANES EN WWW.PERSONAL.COM.AR/TIENDA/PLANES/ O *111. TELECOM ARGENTINA S.A. ALICIA MOREAU DE JUSTO 50. C.A.B.A. CUIT 30-63945373-8.
         </div>
         
         <!-- Modal footer -->

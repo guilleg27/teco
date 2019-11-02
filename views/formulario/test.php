@@ -112,7 +112,7 @@ use yii\helpers\Url;
                                 </div>    
                             </div>
                             <div class="col-md-12" style="padding-bottom: 20px">
-                                <div class="g-recaptcha" data-sitekey="6LdXfcAUAAAAAKNFVCNLqAl_5GuT-QCpKjMm6O6X"></div>
+                                <div class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>
                             </div>
                             <div class="col-md-12" style="padding-bottom: 20px">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -288,7 +288,7 @@ use yii\helpers\Url;
     <script src="<?= Url::to('@web/portabilidad/js/plugins/jquery.singlePageNav.min.js') ?>" type="text/javascript"></script>
     <script src="<?= Url::to('@web/portabilidad/js/plugins/jquery.validate.min.js') ?>" type="text/javascript"></script>
     <script src="<?= Url::to('@web/portabilidad/js/send-subscribe.js') ?>" type="text/javascript"></script>
-    <script src="<?= Url::to('@web/portabilidad/js/contact-form.js') ?>" type="text/javascript"></script>
+    <script src="<?= Url::to('@web/portabilidad/js/contact-form-test.js') ?>" type="text/javascript"></script>
     <script src="<?= Url::to('@web/portabilidad/js/theme.js') ?>" type="text/javascript"></script>
 
     <script>function show5gb() {

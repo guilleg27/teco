@@ -26,12 +26,12 @@ class FormularioController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test'],
+                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
                     [
-                        'actions' => ['promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test'],
+                        'actions' => ['promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -247,5 +247,47 @@ class FormularioController extends Controller
         return $this->render('test', [
             'ktoken' => $ktoken
         ]);
+    }
+
+    public function actionPromotest()
+    {
+        $data = Yii::$app->request;
+
+        $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
+        $params = array('secret'=>'6LfrrsAUAAAAALROkPE1HbgQXCLHRegj_HQ-wQ-i','response'=>$data->post('captcha'));
+        $options = array(
+            CURLOPT_URL            => $url_verify_captcha,
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => http_build_query($params),
+            CURLOPT_RETURNTRANSFER => true
+        );
+
+        $curl   = curl_init();
+        curl_setopt_array($curl,$options);
+        $result = curl_exec($curl);
+        curl_close($curl);
+        $gresponse  = json_decode($result);
+
+        if ($data->post('phone') && ($gresponse->success == true) ) {
+            $model = new Formulario();
+            $model->nombre_completo = $data->post('name');
+            $model->email = $data->post('email');
+            $model->celular = $data->post('phone');
+            $model->ktoken = $data->post('ktoken');
+            $model->plan = $data->post('plan');
+            $model->date = date('Y-m-d H:i:s');
+
+            if($model->save()){
+                //S2S a kickads
+                $url    = "http://www.kickadserver.mobi/convLog/?ktoken=".$model->ktoken;
+                $curl   = curl_init($url);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                $result = curl_exec($curl);
+            }
+            $success = 200;
+        } else {
+            $success = 400;
+        }
+        return \yii\helpers\Json::encode($success);
     }
 }

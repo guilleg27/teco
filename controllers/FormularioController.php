@@ -162,6 +162,7 @@ class FormularioController extends Controller
     public function actionPromo()
     {
         $data    = Yii::$app->request;
+        return \yii\helpers\Json::encode($data->post());
         $gen     = $data->post('gen');
         $captcha = $data->post('captcha');
 

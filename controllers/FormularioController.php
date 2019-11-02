@@ -279,7 +279,7 @@ class FormularioController extends Controller
 
             if($model->save()){
                 //S2S a kickads
-                $url    = "http://www.kickadserver.mobi/convLog/?ktoken=".$model->ktoken;
+                $url    = "http://www.sidekickads.com/convLog/?ktoken=".$model->ktoken;
                 $curl   = curl_init($url);
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $result = curl_exec($curl);

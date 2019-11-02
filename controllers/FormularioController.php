@@ -174,7 +174,7 @@ class FormularioController extends Controller
             
             case 'gen2':
                 $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
-                $params = array('secret'=>'6LdJsMAUAAAAAFP5HXRZp_g77ohXYbnWZ-g84hBH','response'=>$captcha);
+                $params = array('secret'=>'6LfrrsAUAAAAALROkPE1HbgQXCLHRegj_HQ-wQ-i','response'=>$captcha);
                 break;
 
             case 'gen3':

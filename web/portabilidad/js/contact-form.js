@@ -49,6 +49,7 @@
                 url: "/teco/web/formulario/promo",
                 data: dataString,
                 success: function (data) {
+                    alert(data);
                     if(data==200){
                         switch(gen) {
                             case 'gen1':
@@ -160,6 +161,7 @@
                 url: "/teco/web/formulario/promo",
                 data: dataString,
                 success: function (data) {
+                    alert(data);
                     if(data==200){
                         $('.successContent8GB').fadeIn(1000);
                         $('.errorContent8GB').fadeOut(500);
@@ -204,6 +206,7 @@
                 url: "/teco/web/formulario/promo",
                 data: dataString,
                 success: function (data) {
+                    alert(data);
                     if(data==200){
                         $('.successContent12GB').fadeIn(1000);
                         $('.errorContent12GB').fadeOut(500);
@@ -248,6 +251,7 @@
                 url: "/teco/web/formulario/promo",
                 data: dataString,
                 success: function (data) {
+                    alert(data);
                     if(data==200){
                         $('.successContent20GB').fadeIn(1000);
                         $('.errorContent20GB').fadeOut(500);

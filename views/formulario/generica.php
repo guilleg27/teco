@@ -31,6 +31,18 @@ use yii\helpers\Url;
 </head>
 <body class="wow-animate">
 
+    <script type="text/javascript" charset="utf-8">
+    var onloadCallback = function() {
+        var recaptchas = document.querySelectorAll('div[class=g-recaptcha]');
+
+        for( i = 0; i < recaptchas.length; i++) {
+            grecaptcha.render( recaptchas[i].id, {
+            'sitekey' : '6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R',
+            });
+        }
+    }
+</script>
+
     <!-- Site preloader -->
     <section id="preloader">
         <div class="site-spinner"></div>
@@ -573,17 +585,6 @@ use yii\helpers\Url;
    document.getElementById('form20gb').style.display = "none";
 }
 </script> 
-<script type="text/javascript" charset="utf-8">
-    var onloadCallback = function() {
-        var recaptchas = document.querySelectorAll('div[class=g-recaptcha]');
-
-        for( i = 0; i < recaptchas.length; i++) {
-            grecaptcha.render( recaptchas[i].id, {
-            'sitekey' : '6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R',
-            });
-        }
-    }
-</script>
 
 </body>
 </html>

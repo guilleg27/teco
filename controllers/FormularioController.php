@@ -162,7 +162,7 @@ class FormularioController extends Controller
     public function actionPromo()
     {
         $data    = Yii::$app->request;
-        return \yii\helpers\Json::encode($data->post());
+        // return \yii\helpers\Json::encode($data->post());
         $gen     = $data->post('gen');
         $captcha = $data->post('captcha');
 
@@ -200,6 +200,7 @@ class FormularioController extends Controller
         $result = curl_exec($curl);
         curl_close($curl);
         $gresponse  = json_decode($result);
+        return \yii\helpers\Json::encode($result);
 
         if ( $data->post('phone') && ($gresponse->success == true) ) {
             $model = new Formulario();

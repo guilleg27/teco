@@ -118,7 +118,7 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-<!--                             <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LcYocAUAAAAAAWTvUxvx3C6u-9RYGdRjr_fi1xg"></div>  -->  
+                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>   
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -194,7 +194,7 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-<!--                             <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LccocAUAAAAAEUz5j03t5frczjj30IgnJGvP25_"></div>   --> 
+                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>   
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -270,7 +270,7 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-<!--                             <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LchocAUAAAAAKdYYk4M39Ry-CSQjvdjt3jsAsBX"></div>   --> 
+                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>   
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -344,7 +344,7 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-<!--                             <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LckocAUAAAAAJCOIZPNWCUCkSKvNDW9tkytb6hY"></div>  -->  
+                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>   
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>

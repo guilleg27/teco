@@ -162,8 +162,23 @@ class FormularioController extends Controller
     public function actionPromo()
     {
         $data = Yii::$app->request;
-        if ($data->post('phone')) {
-            $code = 200;
+
+        $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
+        $params = array('secret'=>'6LfrrsAUAAAAALROkPE1HbgQXCLHRegj_HQ-wQ-i','response'=>$data->post('captcha'));
+        $options = array(
+            CURLOPT_URL            => $url_verify_captcha,
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => http_build_query($params),
+            CURLOPT_RETURNTRANSFER => true
+        );
+
+        $curl   = curl_init();
+        curl_setopt_array($curl,$options);
+        $result = curl_exec($curl);
+        curl_close($curl);
+        $gresponse  = json_decode($result);
+
+        if ($data->post('phone') && ($gresponse->success == true) ) {
             $model = new Formulario();
             $model->nombre_completo = $data->post('name');
             $model->email = $data->post('email');
@@ -174,15 +189,16 @@ class FormularioController extends Controller
 
             if($model->save()){
                 //S2S a kickads
-                $url    = "http://www.kickadserver.mobi/convLog/?ktoken=".$model->ktoken;
+                $url    = "http://www.sidekickads.com/convLog/?ktoken=".$model->ktoken;
                 $curl   = curl_init($url);
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $result = curl_exec($curl);
             }
+            $success = 200;
         } else {
-            $code = 400;
+            $success = 400;
         }
-        return \yii\helpers\Json::encode($code);
+        return \yii\helpers\Json::encode($success);
     }
 
     /**

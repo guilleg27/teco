@@ -112,7 +112,7 @@ use yii\helpers\Url;
                             </div>    
                             </div>
                             <div style="text-align: center; margin: 0 auto; display: inline-block;">
-                                    <div class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>
+                                    <div class="g-recaptcha" data-sitekey="6LdOsMAUAAAAABeC9kL6J2tENxQg3roOPhNSZPnD"></div>
                             </div>
                             <div class="col-md-12" style="padding-bottom: 20px">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>

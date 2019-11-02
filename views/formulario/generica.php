@@ -194,7 +194,7 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>   
+                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LdJsMAUAAAAAA2MhUqQsHya3AoTjP0z_TH02bkX"></div>   
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -270,7 +270,7 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>   
+                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LdOsMAUAAAAABeC9kL6J2tENxQg3roOPhNSZPnD"></div>   
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -344,7 +344,7 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>   
+                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LdRsMAUAAAAAGyzfKeUfPE0qdzlHOoz3zG0QBN0"></div>   
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>

@@ -157,7 +157,7 @@
         if (validEmail(email) && (name.length > 1) && (phone.length > 1)) {
             $.ajax({
                 type: "POST",
-                url: "/teco/web/formulario/promo",
+                url: "/teco/web/formulario/promotest",
                 data: dataString,
                 success: function (data) {
                     if(data==200){
@@ -201,7 +201,7 @@
         if (validEmail(email) && (name.length > 1) && (phone.length > 1)) {
             $.ajax({
                 type: "POST",
-                url: "/teco/web/formulario/promo",
+                url: "/teco/web/formulario/promotest",
                 data: dataString,
                 success: function (data) {
                     if(data==200){

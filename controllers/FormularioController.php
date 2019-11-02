@@ -161,10 +161,32 @@ class FormularioController extends Controller
 
     public function actionPromo()
     {
-        $data = Yii::$app->request;
+        $data    = Yii::$app->request;
+        $gen     = $data->post('gen');
+        $captcha = $data->post('captcha');
 
-        $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
-        $params = array('secret'=>'6LfrrsAUAAAAALROkPE1HbgQXCLHRegj_HQ-wQ-i','response'=>$data->post('captcha'));
+        switch ($gen) {
+            case 'gen1':
+                $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
+                $params = array('secret'=>'6LfrrsAUAAAAALROkPE1HbgQXCLHRegj_HQ-wQ-i','response'=>$captcha);
+                break;
+            
+            case 'gen2':
+                $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
+                $params = array('secret'=>'6LdJsMAUAAAAAFP5HXRZp_g77ohXYbnWZ-g84hBH','response'=>$captcha);
+                break;
+
+            case 'gen3':
+                $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
+                $params = array('secret'=>'6LdOsMAUAAAAADi62_7zZJzJZikExL3qeTQoiJNd','response'=>$captcha);
+                break;
+
+            case 'gen4':
+                $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
+                $params = array('secret'=>'6LdRsMAUAAAAAEzgtJuFaar1pFNagLjyTcKrKesj','response'=>$captcha);
+                break;
+        }
+
         $options = array(
             CURLOPT_URL            => $url_verify_captcha,
             CURLOPT_POST           => true,
@@ -178,7 +200,7 @@ class FormularioController extends Controller
         curl_close($curl);
         $gresponse  = json_decode($result);
 
-        if ($data->post('phone') && ($gresponse->success == true) ) {
+        if ( $data->post('phone') && ($gresponse->success == true) ) {
             $model = new Formulario();
             $model->nombre_completo = $data->post('name');
             $model->email = $data->post('email');
@@ -270,7 +292,7 @@ class FormularioController extends Controller
         $data = Yii::$app->request;
 
         $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
-        $params = array('secret'=>'6LfrrsAUAAAAALROkPE1HbgQXCLHRegj_HQ-wQ-i','response'=>$data->post('captcha'));
+        $params = array('secret'=>'6LegpcAUAAAAAO5yP9qjiK24eqptWMp-N2B3jgeG','response'=>$data->post('captcha'));
         $options = array(
             CURLOPT_URL            => $url_verify_captcha,
             CURLOPT_POST           => true,

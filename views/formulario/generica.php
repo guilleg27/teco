@@ -24,7 +24,8 @@ use yii\helpers\Url;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?hl=es"></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js?hl=es"></script> -->
+    <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" async defer></script>
 
 
 </head>
@@ -118,7 +119,7 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>   
+                            <div id="RecaptchaField1" style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>   
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -194,7 +195,7 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LdJsMAUAAAAAA2MhUqQsHya3AoTjP0z_TH02bkX"></div>   
+                            <div id="RecaptchaField2" style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LdJsMAUAAAAAA2MhUqQsHya3AoTjP0z_TH02bkX"></div>   
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -270,7 +271,7 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LdOsMAUAAAAABeC9kL6J2tENxQg3roOPhNSZPnD"></div>   
+                            <div id="RecaptchaField3" style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LdOsMAUAAAAABeC9kL6J2tENxQg3roOPhNSZPnD"></div>   
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -344,7 +345,7 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LdRsMAUAAAAAGyzfKeUfPE0qdzlHOoz3zG0QBN0"></div>   
+                            <div id="RecaptchaField4" style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LdRsMAUAAAAAGyzfKeUfPE0qdzlHOoz3zG0QBN0"></div>   
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -572,6 +573,14 @@ use yii\helpers\Url;
    document.getElementById('form20gb').style.display = "none";
 }
 </script> 
+<script type="text/javascript">
+    var CaptchaCallback = function() {
+        grecaptcha.render('RecaptchaField1', {'sitekey' : '6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R'});
+        grecaptcha.render('RecaptchaField2', {'sitekey' : '6LdJsMAUAAAAAA2MhUqQsHya3AoTjP0z_TH02bkX'});
+        grecaptcha.render('RecaptchaField3', {'sitekey' : '6LdOsMAUAAAAABeC9kL6J2tENxQg3roOPhNSZPnD'});
+        grecaptcha.render('RecaptchaField4', {'sitekey' : '6LdRsMAUAAAAAGyzfKeUfPE0qdzlHOoz3zG0QBN0'});
+    };
+</script>
 
 </body>
 </html>

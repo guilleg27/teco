@@ -164,7 +164,7 @@ class FormularioController extends Controller
         $data    = Yii::$app->request;
         $gen     = $data->post('gen');
         $captcha = $data->post('captcha');
-        $generica = isset($data->post('generica')) ? $data->post('generica') : null;
+        $generica = $data->post('generica') ?: null;
 
         switch ($gen) {
             case 'gen1':

@@ -148,7 +148,7 @@
         var ktoken  = $("#form-ktoken8gb").val();
         var gen     = $("#form-gen8gb").val();
         var captcha = $("#g-recaptcha-response").val();
-        var generica = true;
+        var generica = 1;
         var dataString = 'name='+name+'&email='+email+'&phone='+phone+'&plan='+plan+'&ktoken='+ktoken+'&gen='+gen+'&captcha='+captcha+'&generica='+$generica;
 
         function validEmail(emailAddress) {

@@ -162,9 +162,9 @@ class FormularioController extends Controller
     public function actionPromo()
     {
         $data    = Yii::$app->request;
-        // return \yii\helpers\Json::encode($data->post());
         $gen     = $data->post('gen');
         $captcha = $data->post('captcha');
+        $generica = isset($data->post('generica')) ? $data->post('generica') : null;
 
         switch ($gen) {
             case 'gen1':
@@ -174,7 +174,7 @@ class FormularioController extends Controller
             
             case 'gen2':
                 $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
-                $params = array('secret'=>'6LfrrsAUAAAAALROkPE1HbgQXCLHRegj_HQ-wQ-i','response'=>$captcha);
+                $params = array('secret'=>'6LdJsMAUAAAAAFP5HXRZp_g77ohXYbnWZ-g84hBH','response'=>$captcha);
                 break;
 
             case 'gen3':
@@ -200,16 +200,37 @@ class FormularioController extends Controller
         $result = curl_exec($curl);
         curl_close($curl);
         $gresponse  = json_decode($result);
-        return \yii\helpers\Json::encode($result);
 
-        if ( $data->post('phone') && ($gresponse->success == true) ) {
+        // if ( $data->post('phone') && ($gresponse->success == true) ) {
+        //     $model = new Formulario();
+        //     $model->nombre_completo = $data->post('name');
+        //     $model->email           = $data->post('email');
+        //     $model->celular         = $data->post('phone');
+        //     $model->ktoken          = $data->post('ktoken');
+        //     $model->plan            = $data->post('plan');
+        //     $model->date            = date('Y-m-d H:i:s');
+
+        //     if($model->save()){
+        //         //S2S a kickads
+        //         $url    = "http://www.sidekickads.com/convLog/?ktoken=".$model->ktoken;
+        //         $curl   = curl_init($url);
+        //         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        //         $result = curl_exec($curl);
+        //     }
+        //     $success = 200;
+        // } else {
+        //     $success = 400;
+        // }
+
+        if ( $data->post('phone') ) {
+            if ( (!$generica && $gresponse->success == true) || ($generica) )
             $model = new Formulario();
             $model->nombre_completo = $data->post('name');
-            $model->email = $data->post('email');
-            $model->celular = $data->post('phone');
-            $model->ktoken = $data->post('ktoken');
-            $model->plan = $data->post('plan');
-            $model->date = date('Y-m-d H:i:s');
+            $model->email           = $data->post('email');
+            $model->celular         = $data->post('phone');
+            $model->ktoken          = $data->post('ktoken');
+            $model->plan            = $data->post('plan');
+            $model->date            = date('Y-m-d H:i:s');
 
             if($model->save()){
                 //S2S a kickads
@@ -222,6 +243,7 @@ class FormularioController extends Controller
         } else {
             $success = 400;
         }
+
         return \yii\helpers\Json::encode($success);
     }
 

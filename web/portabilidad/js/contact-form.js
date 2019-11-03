@@ -141,14 +141,15 @@
 
     $("#contact8gb").submit(function (e) {
         e.preventDefault();
-        var name       = $("#form-name8gb").val();
-        var email      = $("#form-email8gb").val();
-        var phone      = $("#form-phone8gb").val();
-        var plan       = $("#form-plan8gb").val();
-        var ktoken     = $("#form-ktoken8gb").val();
-        var gen        = $("#form-gen8gb").val();
+        var name    = $("#form-name8gb").val();
+        var email   = $("#form-email8gb").val();
+        var phone   = $("#form-phone8gb").val();
+        var plan    = $("#form-plan8gb").val();
+        var ktoken  = $("#form-ktoken8gb").val();
+        var gen     = $("#form-gen8gb").val();
         var captcha = $("#g-recaptcha-response").val();
-        var dataString = 'name='+name+'&email='+email+'&phone='+phone+'&plan='+plan+'&ktoken='+ktoken+'&gen='+gen+'&captcha='+captcha;
+        var generica = true;
+        var dataString = 'name='+name+'&email='+email+'&phone='+phone+'&plan='+plan+'&ktoken='+ktoken+'&gen='+gen+'&captcha='+captcha+'&generica='+$generica;
 
         function validEmail(emailAddress) {
             var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
@@ -186,14 +187,14 @@
 
     $("#contact12gb").submit(function (e) {
         e.preventDefault();
-        var name       = $("#form-name12gb").val();
-        var email      = $("#form-email12gb").val();
-        var phone      = $("#form-phone12gb").val();
-        var plan       = $("#form-plan12gb").val();
-        var ktoken     = $("#form-ktoken12gb").val();
-        var gen        = $("#form-gen12gb").val();
+        var name    = $("#form-name12gb").val();
+        var email   = $("#form-email12gb").val();
+        var phone   = $("#form-phone12gb").val();
+        var plan    = $("#form-plan12gb").val();
+        var ktoken  = $("#form-ktoken12gb").val();
+        var gen     = $("#form-gen12gb").val();
         var captcha = $("#g-recaptcha-response").val();
-        var dataString = 'name='+name+'&email='+email+'&phone='+phone+'&plan='+plan+'&ktoken='+ktoken+'&gen='+gen+'&captcha='+captcha;
+        var dataString = 'name='+name+'&email='+email+'&phone='+phone+'&plan='+plan+'&ktoken='+ktoken+'&gen='+gen+'&captcha='+captcha+'&generica='+$generica;
 
         function validEmail(emailAddress) {
             var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
@@ -231,14 +232,14 @@
 
     $("#contact20gb").submit(function (e) {
         e.preventDefault();
-        var name       = $("#form-name20gb").val();
-        var email      = $("#form-email20gb").val();
-        var phone      = $("#form-phone20gb").val();
-        var plan       = $("#form-plan20gb").val();
-        var ktoken     = $("#form-ktoken20gb").val();
-        var gen        = $("#form-gen20gb").val();
+        var name    = $("#form-name20gb").val();
+        var email   = $("#form-email20gb").val();
+        var phone   = $("#form-phone20gb").val();
+        var plan    = $("#form-plan20gb").val();
+        var ktoken  = $("#form-ktoken20gb").val();
+        var gen     = $("#form-gen20gb").val();
         var captcha = $("#g-recaptcha-response").val();
-        var dataString = 'name='+name+'&email='+email+'&phone='+phone+'&plan='+plan+'&ktoken='+ktoken+'&gen='+gen+'&captcha='+captcha;
+        var dataString = 'name='+name+'&email='+email+'&phone='+phone+'&plan='+plan+'&ktoken='+ktoken+'&gen='+gen+'&captcha='+captcha+'&generica='+$generica;
 
         function validEmail(emailAddress) {
             var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);

@@ -24,24 +24,11 @@ use yii\helpers\Url;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- <script src="https://www.google.com/recaptcha/api.js?hl=es"></script> -->
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
-
+    <script src="https://www.google.com/recaptcha/api.js?hl=es"></script>
 
 </head>
 <body class="wow-animate">
 
-    <script type="text/javascript" charset="utf-8">
-    var onloadCallback = function() {
-        var recaptchas = document.querySelectorAll('div[class=g-recaptcha]');
-
-        for( i = 0; i < recaptchas.length; i++) {
-            grecaptcha.render( recaptchas[i].id, {
-            'sitekey' : '6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R',
-            });
-        }
-    }
-</script>
 
     <!-- Site preloader -->
     <section id="preloader">
@@ -207,8 +194,8 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-                            <div id="RecaptchaField2" style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>   
-                            </div>
+<!--                             <div id="RecaptchaField2" style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>   
+                            </div> -->
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
                             </div>
@@ -283,7 +270,7 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-                            <div id="RecaptchaField3" style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>   
+<!--                             <div id="RecaptchaField3" style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>  -->  
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -357,7 +344,7 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-                            <div id="RecaptchaField4" style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>   
+<!--                             <div id="RecaptchaField4" style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>  -->  
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>

@@ -49,7 +49,6 @@
                 url: "/teco/web/formulario/promo",
                 data: dataString,
                 success: function (data) {
-                    alert(data);
                     if(data==200){
                         switch(gen) {
                             case 'gen1':

@@ -205,6 +205,7 @@ class FormularioController extends Controller
         $curl   = curl_init();
         curl_setopt_array($curl,$options);
         $result = curl_exec($curl);
+        return \yii\helpers\Json::encode($result);
         curl_close($curl);
         $gresponse  = json_decode($result);
 

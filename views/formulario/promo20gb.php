@@ -27,7 +27,7 @@ use yii\helpers\Url;
     <!-- <script src="https://www.google.com/recaptcha/api.js?hl=es"></script> -->
     <script type="text/javascript">
       var verifyCallback4 = function(response) {
-        document.getElementById("12gb-captcha").value=response;
+        document.getElementById("20gb-captcha").value=response;
       };
       var widgetId4;
       var onloadCallback = function() {

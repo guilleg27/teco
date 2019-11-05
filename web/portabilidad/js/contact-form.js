@@ -53,7 +53,6 @@
                 url: "/teco/web/formulario/promo",
                 data: dataString,
                 success: function (data) {
-                    alert(data);
                     if(data==200){
                         switch(gen) {
                             case 'gen1':
@@ -166,7 +165,6 @@
                 url: "/teco/web/formulario/promo",
                 data: dataString,
                 success: function (data) {
-                    alert(data);
                     if(data==200){
                         $('.successContent8GB').fadeIn(1000);
                         $('.errorContent8GB').fadeOut(500);
@@ -197,7 +195,7 @@
         var plan    = $("#form-plan12gb").val();
         var ktoken  = $("#form-ktoken12gb").val();
         var gen     = $("#form-gen12gb").val();
-        var captcha = $("#g-recaptcha-response").val();
+        // var captcha = $("#g-recaptcha-response").val();
         var captcha12gb = $("#12gb-captcha").val();
         var dataString = 'name='+name+'&email='+email+'&phone='+phone+'&plan='+plan+'&ktoken='+ktoken+'&gen='+gen+'&captcha12gb='+captcha12gb;
 
@@ -212,7 +210,6 @@
                 url: "/teco/web/formulario/promo",
                 data: dataString,
                 success: function (data) {
-                    alert(data);
                     if(data==200){
                         $('.successContent12GB').fadeIn(1000);
                         $('.errorContent12GB').fadeOut(500);
@@ -243,7 +240,7 @@
         var plan    = $("#form-plan20gb").val();
         var ktoken  = $("#form-ktoken20gb").val();
         var gen     = $("#form-gen20gb").val();
-        var captcha = $("#g-recaptcha-response").val();
+        // var captcha = $("#g-recaptcha-response").val();
         var captcha20gb = $("#20gb-captcha").val();
         var dataString = 'name='+name+'&email='+email+'&phone='+phone+'&plan='+plan+'&ktoken='+ktoken+'&gen='+gen+'&captcha20gb='+captcha20gb;
 
@@ -258,7 +255,6 @@
                 url: "/teco/web/formulario/promo",
                 data: dataString,
                 success: function (data) {
-                    alert(data);
                     if(data==200){
                         $('.successContent20GB').fadeIn(1000);
                         $('.errorContent20GB').fadeOut(500);

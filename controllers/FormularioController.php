@@ -169,28 +169,28 @@ class FormularioController extends Controller
             case 'gen1':
                 $params = array(
                     'secret'=>'6LfrrsAUAAAAALROkPE1HbgQXCLHRegj_HQ-wQ-i',
-                    'response'=>$data->post('5gb-captcha') ?: null
+                    'response'=>$data->post('captcha5gb') ?: null
                 );
                 break;
             
             case 'gen2':
                 $params = array(
                     'secret'=>'6LdJsMAUAAAAAFP5HXRZp_g77ohXYbnWZ-g84hBH',
-                    'response'=>$data->post('8gb-captcha') ?: null
+                    'response'=>$data->post('captcha8gb') ?: null
                 );
                 break;
 
             case 'gen3':
                 $params = array(
                     'secret'=>'6LdOsMAUAAAAADi62_7zZJzJZikExL3qeTQoiJNd',
-                    'response'=>$data->post('12gb-captcha') ?: null
+                    'response'=>$data->post('captcha12gb') ?: null
                 );
                 break;
 
             case 'gen4':
                 $params = array(
                     'secret'=>'6LdRsMAUAAAAAEzgtJuFaar1pFNagLjyTcKrKesj',
-                    'response'=>$data->post('20gb-captcha') ?: null
+                    'response'=>$data->post('captcha20gb') ?: null
                 );
                 break;
         }
@@ -205,7 +205,6 @@ class FormularioController extends Controller
         $curl   = curl_init();
         curl_setopt_array($curl,$options);
         $result = curl_exec($curl);
-        return \yii\helpers\Json::encode($result);
         curl_close($curl);
         $gresponse  = json_decode($result);
 

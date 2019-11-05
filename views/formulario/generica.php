@@ -24,11 +24,51 @@ use yii\helpers\Url;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?hl=es"></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js?hl=es"></script> -->
+    <script type="text/javascript">
+      var verifyCallback = function(response) {
+        document.getElementById("5gb-captcha").value=response;
+      };
+      var verifyCallback2 = function(response) {
+        document.getElementById("8gb-captcha").value=response;
+      };
+      var verifyCallback3 = function(response) {
+        document.getElementById("12gb-captcha").value=response;
+      };
+      var verifyCallback4 = function(response) {
+        document.getElementById("20gb-captcha").value=response;
+      };
+      var widgetId1;
+      var widgetId2;
+      var widgetId3;
+      var widgetId4;
+      var onloadCallback = function() {
+        // Renders the HTML element with id 'recaptcha1' as a reCAPTCHA widget.
+        // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+        widgetId1 = grecaptcha.render('recaptcha1', {
+          'sitekey' : '6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R',
+          'callback' : verifyCallback
+        });
+        widgetId2 = grecaptcha.render(document.getElementById('recaptcha2'), {
+          'sitekey' : '6LdJsMAUAAAAAA2MhUqQsHya3AoTjP0z_TH02bkX',
+          'callback' : verifyCallback2
+        });
+        widgetId3 = grecaptcha.render(document.getElementById('recaptcha3'), {
+          'sitekey' : '6LdOsMAUAAAAABeC9kL6J2tENxQg3roOPhNSZPnD',
+          'callback' : verifyCallback3
+        });
+        widgetId4 = grecaptcha.render(document.getElementById('recaptcha4'), {
+          'sitekey' : '6LdRsMAUAAAAAGyzfKeUfPE0qdzlHOoz3zG0QBN0',
+          'callback' : verifyCallback4
+        });
+      };
+    </script>
 
 </head>
 <body class="wow-animate">
-
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
 
     <!-- Site preloader -->
     <section id="preloader">
@@ -118,7 +158,9 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
-                            <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>   
+                            <div id="recaptcha1" style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;"></div>
+                            <input type="hidden" class="hiddenRecaptcha" name="5gb-captcha" id="5gb-captcha">
+<!--                             <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LegpcAUAAAAAEGKEHG2xMHOb5aJIyyEWn4uQAi2"></div>  -->
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -193,8 +235,10 @@ use yii\helpers\Url;
                              <div class="col-md-12" style="display: flex;justify-content: flex-start;flex-flow: column; height: 95px;">
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
-                            </div> 
-<!--                             <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>    -->
+                            </div>
+                            <div id="recaptcha2" style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;"></div>
+                            <input type="hidden" class="hiddenRecaptcha" name="8gb-captcha" id="8gb-captcha">
+<!--                             <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6Levr8AUAAAAAOQY6cKWb1wEuTDpwfqilNN9STMz"></div>  -->  
                             </div>
                             <div class="col-md-12">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -270,6 +314,8 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
+                            <div id="recaptcha3" style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;"></div>
+                            <input type="hidden" class="hiddenRecaptcha" name="12gb-captcha" id="12gb-captcha">
 <!--                             <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>  -->  
                             </div>
                             <div class="col-md-12">
@@ -344,6 +390,8 @@ use yii\helpers\Url;
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
                             </div> 
+                            <div id="recaptcha4" style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;"></div>
+                            <input type="hidden" class="hiddenRecaptcha" name="20gb-captcha" id="20gb-captcha">
 <!--                             <div style="transform:scale(0.60);-webkit-transform:scale(0.60);transform-origin:0 0;-webkit-transform-origin:0 0; display: inline-block;" class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>  -->  
                             </div>
                             <div class="col-md-12">

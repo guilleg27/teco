@@ -24,11 +24,28 @@ use yii\helpers\Url;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?hl=es"></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js?hl=es"></script> -->
+    <script type="text/javascript">
+      var verifyCallback = function(response) {
+        document.getElementById("5gb-captcha").value=response;
+      };
+      var widgetId1;
+      var onloadCallback = function() {
+        // Renders the HTML element with id 'recaptcha1' as a reCAPTCHA widget.
+        // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+        widgetId1 = grecaptcha.render('recaptcha1', {
+          'sitekey' : '6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R',
+          'callback' : verifyCallback
+        });
+      };
+    </script>
 
 
 </head>
 <body class="wow-animate">
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
 
     <!-- Site preloader -->
     <section id="preloader">
@@ -112,7 +129,8 @@ use yii\helpers\Url;
                                 </div>    
                             </div>
                                 <div style="text-align: center; margin: 0 auto; display: inline-block;">
-                                    <div class="g-recaptcha" data-sitekey="6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R"></div>
+                                    <div id="recaptcha1" class="g-recaptcha"></div>
+                                    <input type="hidden" class="hiddenRecaptcha" name="5gb-captcha" id="5gb-captcha">
                                 </div>
                             <div class="col-md-12" style="padding-bottom: 20px">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>

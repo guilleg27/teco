@@ -24,10 +24,27 @@ use yii\helpers\Url;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?hl=es"></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js?hl=es"></script> -->
+    <script type="text/javascript">
+      var verifyCallback4 = function(response) {
+        document.getElementById("12gb-captcha").value=response;
+      };
+      var widgetId4;
+      var onloadCallback = function() {
+        // Renders the HTML element with id 'recaptcha1' as a reCAPTCHA widget.
+        // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+        widgetId4 = grecaptcha.render(document.getElementById('recaptcha4'), {
+          'sitekey' : '6LdRsMAUAAAAAGyzfKeUfPE0qdzlHOoz3zG0QBN0',
+          'callback' : verifyCallback4
+        });
+      };
+    </script>
 
 </head>
 <body class="wow-animate">
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
 
     <!-- Site preloader -->
     <section id="preloader">
@@ -111,7 +128,9 @@ use yii\helpers\Url;
                             </div>    
                             </div>
                             <div style="text-align: center; margin: 0 auto; display: inline-block;">
-                                    <div class="g-recaptcha" data-sitekey="6LdRsMAUAAAAAGyzfKeUfPE0qdzlHOoz3zG0QBN0"></div>
+                                <!-- <div class="g-recaptcha" data-sitekey="6LdRsMAUAAAAAGyzfKeUfPE0qdzlHOoz3zG0QBN0"></div> -->
+                                <div id="recaptcha4" class="g-recaptcha"></div>
+                                <input type="hidden" class="hiddenRecaptcha" name="20gb-captcha" id="20gb-captcha">
                             </div>
                             <div class="col-md-12" style="padding-bottom: 20px">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>

@@ -161,30 +161,37 @@ class FormularioController extends Controller
 
     public function actionPromo()
     {
-        $data    = Yii::$app->request;
-        $gen     = $data->post('gen');
-        $captcha = $data->post('captcha');
-        $generica = $data->post('generica') ?: null;
+        $data               = Yii::$app->request;
+        $gen                = $data->post('gen');
+        $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
 
         switch ($gen) {
             case 'gen1':
-                $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
-                $params = array('secret'=>'6LfrrsAUAAAAALROkPE1HbgQXCLHRegj_HQ-wQ-i','response'=>$captcha);
+                $params = array(
+                    'secret'=>'6LfrrsAUAAAAALROkPE1HbgQXCLHRegj_HQ-wQ-i',
+                    'response'=>$data->post('5gb-captcha') ?: null
+                );
                 break;
             
             case 'gen2':
-                $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
-                $params = array('secret'=>'6LdJsMAUAAAAAFP5HXRZp_g77ohXYbnWZ-g84hBH','response'=>$captcha);
+                $params = array(
+                    'secret'=>'6LdJsMAUAAAAAFP5HXRZp_g77ohXYbnWZ-g84hBH',
+                    'response'=>$data->post('8gb-captcha') ?: null
+                );
                 break;
 
             case 'gen3':
-                $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
-                $params = array('secret'=>'6LdOsMAUAAAAADi62_7zZJzJZikExL3qeTQoiJNd','response'=>$captcha);
+                $params = array(
+                    'secret'=>'6LdOsMAUAAAAADi62_7zZJzJZikExL3qeTQoiJNd',
+                    'response'=>$data->post('12gb-captcha') ?: null
+                );
                 break;
 
             case 'gen4':
-                $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
-                $params = array('secret'=>'6LdRsMAUAAAAAEzgtJuFaar1pFNagLjyTcKrKesj','response'=>$captcha);
+                $params = array(
+                    'secret'=>'6LdRsMAUAAAAAEzgtJuFaar1pFNagLjyTcKrKesj',
+                    'response'=>$data->post('20gb-captcha') ?: null
+                );
                 break;
         }
 
@@ -201,29 +208,7 @@ class FormularioController extends Controller
         curl_close($curl);
         $gresponse  = json_decode($result);
 
-        // if ( $data->post('phone') && ($gresponse->success == true) ) {
-        //     $model = new Formulario();
-        //     $model->nombre_completo = $data->post('name');
-        //     $model->email           = $data->post('email');
-        //     $model->celular         = $data->post('phone');
-        //     $model->ktoken          = $data->post('ktoken');
-        //     $model->plan            = $data->post('plan');
-        //     $model->date            = date('Y-m-d H:i:s');
-
-        //     if($model->save()){
-        //         //S2S a kickads
-        //         $url    = "http://www.sidekickads.com/convLog/?ktoken=".$model->ktoken;
-        //         $curl   = curl_init($url);
-        //         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        //         $result = curl_exec($curl);
-        //     }
-        //     $success = 200;
-        // } else {
-        //     $success = 400;
-        // }
-
-        if ( $data->post('phone') ) {
-            if ( (!$generica && $gresponse->success == true) || ($generica) )
+        if ( $data->post('phone') && ($gresponse->success == true) ) {
             $model = new Formulario();
             $model->nombre_completo = $data->post('name');
             $model->email           = $data->post('email');
@@ -311,12 +296,43 @@ class FormularioController extends Controller
         ]);
     }
 
+    /* Only for test */
     public function actionPromotest()
     {
-        $data = Yii::$app->request;
-
+        $data    = Yii::$app->request;
+        $gen     = $data->post('gen');
         $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
-        $params = array('secret'=>'6LegpcAUAAAAAO5yP9qjiK24eqptWMp-N2B3jgeG','response'=>$data->post('captcha'));
+
+        switch ($gen) {
+            case 'gen1':
+                $params = array(
+                    'secret'=>'6LegpcAUAAAAAO5yP9qjiK24eqptWMp-N2B3jgeG',
+                    'response'=>$data->post('5gb-captcha') ?: null
+                );
+                break;
+            
+            case 'gen2':
+                $params = array(
+                    'secret'=>'6Levr8AUAAAAABbNj-AOA3zI7ctHgtVQEi_YTZSw',
+                    'response'=>$data->post('8gb-captcha') ?: null
+                );
+                break;
+
+            case 'gen3':
+                $params = array(
+                    'secret'=>'6LedAMEUAAAAAGYCEK25glzptngrUtS5IDLhN4jn',
+                    'response'=>$data->post('12gb-captcha') ?: null
+                );
+                break;
+
+            case 'gen4':
+                $params = array(
+                    'secret'=>'6LdKBsEUAAAAAEwFByEYJP45IhIwd03WaFI1cxd1',
+                    'response'=>$data->post('20gb-captcha') ?: null
+                );
+                break;
+        }
+
         $options = array(
             CURLOPT_URL            => $url_verify_captcha,
             CURLOPT_POST           => true,
@@ -329,15 +345,16 @@ class FormularioController extends Controller
         $result = curl_exec($curl);
         curl_close($curl);
         $gresponse  = json_decode($result);
+        return \yii\helpers\Json::encode($data->post());
 
-        if ($data->post('phone') && ($gresponse->success == true) ) {
+        if ( $data->post('phone') && ($gresponse->success == true) ) {
             $model = new Formulario();
             $model->nombre_completo = $data->post('name');
-            $model->email = $data->post('email');
-            $model->celular = $data->post('phone');
-            $model->ktoken = $data->post('ktoken');
-            $model->plan = $data->post('plan');
-            $model->date = date('Y-m-d H:i:s');
+            $model->email           = $data->post('email');
+            $model->celular         = $data->post('phone');
+            $model->ktoken          = $data->post('ktoken');
+            $model->plan            = $data->post('plan');
+            $model->date            = date('Y-m-d H:i:s');
 
             if($model->save()){
                 //S2S a kickads
@@ -350,6 +367,8 @@ class FormularioController extends Controller
         } else {
             $success = 400;
         }
+
         return \yii\helpers\Json::encode($success);
     }
+
 }

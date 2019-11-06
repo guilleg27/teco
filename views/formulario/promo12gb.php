@@ -132,6 +132,8 @@ use yii\helpers\Url;
                             <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="12GB">
                             <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen" name="form-gen" value="gen3">
+                            <input class="input-md form-full" type="hidden" id="form-pubId" name="form-pubId" value="<?php echo $pubId ?>">
+                            <input class="input-md form-full" type="hidden" id="form-providerId" name="form-providerId" value="<?php echo $providerId ?>">
                             <div class="col-md-12">
                               <div class="form-field-wrapper text-left">
                                 <p>*Campos obligatorios</p>

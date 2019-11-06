@@ -163,6 +163,8 @@ use yii\helpers\Url;
                             <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="5GB">
                             <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen" name="form-gen" value="gen1">
+                            <input class="input-md form-full" type="hidden" id="form-pubId" name="form-pubId" value="<?php echo $pubId ?>">
+                            <input class="input-md form-full" type="hidden" id="form-providerId" name="form-providerId" value="<?php echo $providerId ?>">
                              <div class="col-md-12" style="display: flex;justify-content: flex-start;flex-flow: column; height: 95px;">
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
@@ -241,6 +243,8 @@ use yii\helpers\Url;
                             <input class="input-md form-full" type="hidden" id="form-plan8gb" name="form-plan8gb" value="8GB">
                             <input class="input-md form-full" type="hidden" id="form-ktoken8gb" name="form-ktoken8gb" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen8gb" name="form-gen8gb" value="gen2">
+                            <input class="input-md form-full" type="hidden" id="form-pubId8gb" name="form-pubId8gb" value="<?php echo $pubId ?>">
+                            <input class="input-md form-full" type="hidden" id="form-providerId8gb" name="form-providerId8gb" value="<?php echo $providerId ?>">
                              <div class="col-md-12" style="display: flex;justify-content: flex-start;flex-flow: column; height: 95px;">
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
@@ -319,6 +323,8 @@ use yii\helpers\Url;
                             <input class="input-md form-full" type="hidden" id="form-plan12gb" name="form-plan12gb" value="12GB">
                             <input class="input-md form-full" type="hidden" id="form-ktoken12gb" name="form-ktoken12gb" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen12gb" name="form-gen12gb" value="gen3">
+                            <input class="input-md form-full" type="hidden" id="form-pubId12gb" name="form-pubId12gb" value="<?php echo $pubId ?>">
+                            <input class="input-md form-full" type="hidden" id="form-providerId12gb" name="form-providerId12gb" value="<?php echo $providerId ?>">
                              <div class="col-md-12" style="display: flex;justify-content: flex-start;flex-flow: column; height: 95px;">
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
@@ -395,6 +401,8 @@ use yii\helpers\Url;
                             <input class="input-md form-full" type="hidden" id="form-plan20gb" name="form-plan20gb" value="20GB">
                             <input class="input-md form-full" type="hidden" id="form-ktoken20gb" name="form-ktoken20gb" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen20gb" name="form-gen20gb" value="gen4">
+                            <input class="input-md form-full" type="hidden" id="form-pubId20gb" name="form-pubId20gb" value="<?php echo $pubId ?>">
+                            <input class="input-md form-full" type="hidden" id="form-providerId20gb" name="form-providerId20gb" value="<?php echo $providerId ?>">
                              <div class="col-md-12" style="display: flex;justify-content: flex-start;flex-flow: column; height: 95px;">
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>

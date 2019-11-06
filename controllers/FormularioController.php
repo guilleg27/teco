@@ -215,6 +215,8 @@ class FormularioController extends Controller
             $model->celular         = $data->post('phone');
             $model->ktoken          = $data->post('ktoken');
             $model->plan            = $data->post('plan');
+            $model->pubId           = $data->post('pubId');
+            $model->providerId      = $data->post('providerId');
             $model->date            = date('Y-m-d H:i:s');
 
             if($model->save()){
@@ -239,50 +241,73 @@ class FormularioController extends Controller
     public function actionGenerica()
     {
         $this->layout = 'vacio';
-        $request = Yii::$app->request;
-        $ktoken = $request->get('ktoken') ?: "empty";
+        $request      = Yii::$app->request;
+        $ktoken       = $request->get('ktoken') ?: "empty";
+        $pubId        = $request->get('pubId') ?: null;
+        $providerId   = $request->get('providerId') ?: null;
         return $this->render('generica', [
-            'ktoken' => $ktoken
+            'ktoken'     => $ktoken,
+            'pubId'      => $pubId,
+            'providerId' => $providerId
         ]);
     }
 
     public function actionPromo5gb()
     {
         $this->layout = 'vacio';
-        $request = Yii::$app->request;
-        $ktoken = $request->get('ktoken') ?: "empty";
+        $request      = Yii::$app->request;
+        $ktoken       = $request->get('ktoken') ?: "empty";
+        $pubId        = $request->get('pubId') ?: null;
+        $providerId   = $request->get('providerId') ?: null;
         return $this->render('promo5gb', [
-            'ktoken' => $ktoken
+            'ktoken'     => $ktoken,
+            'pubId'      => $pubId,
+            'providerId' => $providerId
         ]);
     }
 
     public function actionPromo8gb()
     {
         $this->layout = 'vacio';
-        $request = Yii::$app->request;
-        $ktoken = $request->get('ktoken') ?: "empty";
+        $request      = Yii::$app->request;
+        $ktoken       = $request->get('ktoken') ?: "empty";
+        $pubId        = $request->get('pubId') ?: null;
+        $providerId   = $request->get('providerId') ?: null;
+
         return $this->render('promo8gb', [
-            'ktoken' => $ktoken
+            'ktoken'     => $ktoken,
+            'pubId'      => $pubId,
+            'providerId' => $providerId
         ]);
     }
 
     public function actionPromo12gb()
     {
         $this->layout = 'vacio';
-        $request = Yii::$app->request;
-        $ktoken = $request->get('ktoken') ?: "empty";
+        $request      = Yii::$app->request;
+        $ktoken       = $request->get('ktoken') ?: "empty";
+        $pubId        = $request->get('pubId') ?: null;
+        $providerId   = $request->get('providerId') ?: null;
+
         return $this->render('promo12gb', [
-            'ktoken' => $ktoken
+            'ktoken'     => $ktoken,
+            'pubId'      => $pubId,
+            'providerId' => $providerId
         ]);
     }
 
     public function actionPromo20gb()
     {
         $this->layout = 'vacio';
-        $request = Yii::$app->request;
-        $ktoken = $request->get('ktoken') ?: "empty";
+        $request      = Yii::$app->request;
+        $ktoken       = $request->get('ktoken') ?: "empty";
+        $pubId        = $request->get('pubId') ?: null;
+        $providerId   = $request->get('providerId') ?: null;
+
         return $this->render('promo20gb', [
-            'ktoken' => $ktoken
+            'ktoken'     => $ktoken,
+            'pubId'      => $pubId,
+            'providerId' => $providerId
         ]);
     }
 

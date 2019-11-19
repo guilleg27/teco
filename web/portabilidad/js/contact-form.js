@@ -40,8 +40,8 @@
         var captcha8gb  = $("#8gb-captcha").val();
         var captcha12gb = $("#12gb-captcha").val();
         var captcha20gb = $("#20gb-captcha").val();
-        var pubId       = $("#pubId").val();
-        var providerId  = $("#providerId").val();
+        var pubId       = $("#form-pubId").val();
+        var providerId  = $("#form-providerId").val();
         var dataString = 'name='+name+'&email='+email+'&phone='+phone+'&plan='+plan+'&ktoken='+ktoken+'&gen='+gen+'&captcha5gb='+captcha5gb+'&captcha8gb='+captcha8gb+'&captcha12gb='+captcha12gb+'&captcha20gb='+captcha20gb+'&pubId='+pubId+'&providerId='+providerId;
 
         function validEmail(emailAddress) {

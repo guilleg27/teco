@@ -85,10 +85,11 @@ use yii\helpers\Url;
                     <div class="container" style="height: 100%">
                 <div class="intro-content">
                     <div class="intro-content-inner">
-                            <div class="lefto col-lg-5 col-md-12" style="float: right">
+                        <div class="lefto col-lg-5 col-md-12" style="float: right">
                             <h2 class="title-pasate" style="margin-bottom: 0px; color: white; font-weight: 600;">PLAN 5GB</h2>
                             <h1 class="intro-title" style="font-weight: 800; color: white"><strong style="color: #FFD517">50%</strong> de descuento</h1>
-                            <h4 class="alt-title intro-sub-title" style="color: white">por 12 meses + <strong style="color: #FFD517; font-size: 30px;">10GB</strong> de regalo</h4>
+                            <h4 class="alt-title intro-sub-title" style="color: white; margin-bottom: 0px">por 12 meses + <strong style="color: #FFD517; font-size: 30px;">10GB</strong> de regalo</h4>
+                            <h5 class="alt-title intro-sub-title" style="color: white; font-weight: 400">descargando <strong>Mi Personal</strong></h5>
                             <h5 class="alt-title intro-sub-title" style="color: white;">¡Envianos tus datos para aprovechar la promoción!</h5>
                             <h5 class="alt-title intro-sub-title bye" style="color: white;text-transform: none;font-size: 16px;"><i class="fa fa-whatsapp" style="font-size: 22px;color: mediumaquamarine"></i> Whatsapp gratis</h5>
                             <h5 class="alt-title intro-sub-title bye" style="color: white;text-transform: none;font-size: 16px;"><i class="fa fa-check-circle-o" style="font-size: 22px;color: mediumaquamarine"></i> Llamadas ilimitadas a cualquier compañía a todo el país</h5>
@@ -227,9 +228,9 @@ use yii\helpers\Url;
                     <div data-wow-delay="0.3s" data-wow-duration="2s" class="col-md-3 mb-10 wow fadeIn" style="visibility: visible; animation-duration: 2s; animation-delay: 0.1s; animation-name: fadeIn;">
                         <div class="content-box" style="text-align: center">
                             <div class="alt-icon-color">
-                                <i class="fa fa-wifi" style="font-size: 60px;"></i>
+                                <i class="fa fa-gift" style="font-size: 60px;"></i>
                             </div>
-                            <p style="font-size: 16px">La red de internet 4G<br><strong>más rápida</strong> del país</p>
+                            <p style="font-size: 16px">Accedé a Beneficios <br> de <strong>Club Personal</strong></p>
                         </div>
                     </div>
                     <div data-wow-delay="0.4s" data-wow-duration="2s" class="col-md-3 mb-10 wow fadeIn" style="visibility: visible; animation-duration: 2s; animation-delay: 0.1s; animation-name: fadeIn;">

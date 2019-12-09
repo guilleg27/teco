@@ -664,7 +664,7 @@ i.right {
     }
 
     .title-pasate {
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
     .rojo {
@@ -1720,7 +1720,7 @@ h5.alt-title {
     
     .highlight.portabilidad {
     background: url(../img/fondo-persona-mobile.jpg) no-repeat !important;
-    height: 200px !important;
+    height: 220px !important;
     background-size: cover !important;
 }
     

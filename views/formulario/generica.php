@@ -104,12 +104,13 @@ use yii\helpers\Url;
         <!-- End Header -->
 
         <!-- Page Intro -->
-        <section id="inner-intro" class="container-fluid no-padding highlight portabilidad" data-background-img="<?= Url::to('@web/portabilidad/img/fondo-persona.jpg') ?>">
-                            <div class="intro-content">
+        <section id="inner-intro" class="container-fluid no-padding highlight portabilidad" data-background-img="<?= Url::to('@web/portabilidad/img/fondo-persona-desktop.jpg') ?>">
+                    <div class="intro-content">
                         <div class="intro-content-inner">
                            <h2 class="lefto title-pasate" style="margin-bottom: 0px; color: white">Pasate a Personal</h2>
                             <h1 class="intro-title lefto" style="font-weight: 800; color: white; margin-bottom: 0px"><strong style="color: #FFD517">50%</strong> de descuento</h1>
-                                <h4 class="alt-title lefto intro-sub-title" style="color: white">por 12 meses + <strong style="color: #FFD517; font-size: 30px;">10GB</strong> de regalo</h4>
+                                <h4 class="alt-title lefto intro-sub-title" style="color: white; margin-bottom: 0px">por 12 meses + <strong style="color: #FFD517; font-size: 30px;">10GB</strong> de regalo</h4>
+                                <h5 class="alt-title lefto intro-sub-title" style="color: white; margin-bottom: 0px; font-weight: 400">descargando <strong>Mi Personal</strong></h5>
                         </div>
                     </div>
         </section>
@@ -511,9 +512,9 @@ use yii\helpers\Url;
                     <div data-wow-delay="0.3s" data-wow-duration="2s" class="col-md-3 mb-10 wow fadeIn" style="visibility: visible; animation-duration: 2s; animation-delay: 0.1s; animation-name: fadeIn;">
                         <div class="content-box" style="text-align: center">
                             <div class="alt-icon-color">
-                                <i class="fa fa-wifi" style="font-size: 60px;"></i>
+                                <i class="fa fa-gift" style="font-size: 60px;"></i>
                             </div>
-                            <p style="font-size: 16px">La red de internet 4G<br><strong>más rápida</strong> del país</p>
+                            <p style="font-size: 16px">Accedé a Beneficios <br> de <strong>Club Personal</strong></p>
                         </div>
                     </div>
                     <div data-wow-delay="0.4s" data-wow-duration="2s" class="col-md-3 mb-10 wow fadeIn" style="visibility: visible; animation-duration: 2s; animation-delay: 0.1s; animation-name: fadeIn;">

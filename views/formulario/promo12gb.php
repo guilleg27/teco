@@ -24,10 +24,37 @@ use yii\helpers\Url;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132110118-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-132110118-2');
+    </script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js?hl=es"></script> -->
+    <script type="text/javascript">
+      var verifyCallback3 = function(response) {
+        document.getElementById("12gb-captcha").value=response;
+      };
+      var widgetId3;
+      var onloadCallback = function() {
+        // Renders the HTML element with id 'recaptcha1' as a reCAPTCHA widget.
+        // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
+        widgetId3 = grecaptcha.render(document.getElementById('recaptcha3'), {
+          'sitekey' : '6LdOsMAUAAAAABeC9kL6J2tENxQg3roOPhNSZPnD',
+          'callback' : verifyCallback3
+        });
+      };
+    </script>
 
 
 </head>
 <body class="wow-animate">
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
 
     <!-- Site preloader -->
     <section id="preloader">
@@ -58,10 +85,11 @@ use yii\helpers\Url;
                     <div class="container" style="height: 100%">
                 <div class="intro-content">
                     <div class="intro-content-inner">
-                           <div class="lefto col-lg-5 col-md-12" style="float: right">
+                        <div class="lefto col-lg-5 col-md-12" style="float: right">
                             <h2 class="title-pasate" style="margin-bottom: 0px; color: white; font-weight: 600;">PLAN 12GB</h2>
                             <h1 class="intro-title" style="font-weight: 800; color: white"><strong style="color: #FFD517">50%</strong> de descuento</h1>
-                            <h4 class="alt-title intro-sub-title" style="color: white">por 12 meses</h4>
+                            <h4 class="alt-title intro-sub-title" style="color: white; margin-bottom: 0px">por 12 meses + <strong style="color: #FFD517; font-size: 30px;">10GB</strong> de regalo</h4>
+                            <h5 class="alt-title intro-sub-title" style="color: white; font-weight: 400">descargando <strong>Mi Personal</strong></h5>
                             <h5 class="alt-title intro-sub-title" style="color: white;">¡Envianos tus datos para aprovechar la promoción!</h5>
                             <h5 class="alt-title intro-sub-title bye" style="color: white;text-transform: none;font-size: 16px;"><i class="fa fa-whatsapp" style="font-size: 22px;color: mediumaquamarine"></i> Whatsapp gratis</h5>
                             <h5 class="alt-title intro-sub-title bye" style="color: white;text-transform: none;font-size: 16px;"><i class="fa fa-check-circle-o" style="font-size: 22px;color: mediumaquamarine"></i> Llamadas ilimitadas a cualquier compañía a todo el país</h5>
@@ -105,10 +133,17 @@ use yii\helpers\Url;
                             <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="12GB">
                             <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen" name="form-gen" value="gen3">
+                            <input class="input-md form-full" type="hidden" id="form-pubId" name="form-pubId" value="<?php echo $pubId ?>">
+                            <input class="input-md form-full" type="hidden" id="form-providerId" name="form-providerId" value="<?php echo $providerId ?>">
                             <div class="col-md-12">
                               <div class="form-field-wrapper text-left">
                                 <p>*Campos obligatorios</p>
                             </div>    
+                            </div>
+                            <div style="text-align: center; margin: 0 auto; display: inline-block;">
+                                <!-- <div class="g-recaptcha" data-sitekey="6LdOsMAUAAAAABeC9kL6J2tENxQg3roOPhNSZPnD"></div> -->
+                                <div id="recaptcha3" class="g-recaptcha"></div>
+                                <input type="hidden" class="hiddenRecaptcha" name="12gb-captcha" id="12gb-captcha">
                             </div>
                             <div class="col-md-12" style="padding-bottom: 20px">
                                 <button class="btn-contact-submit btn btn-md btn-color" type="submit" id="form-submit" name="submit">Solicitar</button>
@@ -194,9 +229,9 @@ use yii\helpers\Url;
                     <div data-wow-delay="0.3s" data-wow-duration="2s" class="col-md-3 mb-10 wow fadeIn" style="visibility: visible; animation-duration: 2s; animation-delay: 0.1s; animation-name: fadeIn;">
                         <div class="content-box" style="text-align: center">
                             <div class="alt-icon-color">
-                                <i class="fa fa-wifi" style="font-size: 60px;"></i>
+                                <i class="fa fa-gift" style="font-size: 60px;"></i>
                             </div>
-                            <p style="font-size: 16px">La red de internet 4G<br><strong>más rápida</strong> del país</p>
+                            <p style="font-size: 16px">Accedé a Beneficios <br> de <strong>Club Personal</strong></p>
                         </div>
                     </div>
                     <div data-wow-delay="0.4s" data-wow-duration="2s" class="col-md-3 mb-10 wow fadeIn" style="visibility: visible; animation-duration: 2s; animation-delay: 0.1s; animation-name: fadeIn;">
@@ -204,7 +239,7 @@ use yii\helpers\Url;
                             <div class="alt-icon-color">
                                 <i class="fa fa-dollar" style="font-size: 60px;"></i>
                             </div>
-                            <p style="font-size: 16px">Si sos <strong>Cliente Fibertel</strong> ahorrá $500 en tu factura de internet</p>
+                            <p style="font-size: 16px">Si sos <strong>Cliente Fibertel</strong> ahorrá $600 en tu factura de internet</p>
                         </div>
                     </div>
                 </div>
@@ -225,7 +260,8 @@ use yii\helpers\Url;
         
         <!-- Modal body -->
         <div class="modal-body" style="font-size: 12px">
-            PROMOCIÓN DE ALCANCE NACIONAL, VÁLIDA DESDE EL 02/09/2019 HASTA EL 31/10/2019, EXCLUSIVAMENTE PARA CLIENTES CON DNI. OFERTA DE DESCUENTO: VÁLIDA ÚNICAMENTE PARA LA MODALIDAD DE PORTABILIDAD CON LOS PLANES CONEXIÓN TOTAL CONTROL PORTA M, CONEXIÓN CONTROL FAMILIA L, BLACK CONEXIÓN TOTAL LIBRE 1XL Y BLACK CONEXIÓN TOTAL LIBRE 4XL (PRECIOS REGULARES DE LOS ABONOS MENSUALES $1.020; $1.500; $1.900 Y $2.400, RESPECTIVAMENTE). EL CLIENTE ACCEDE AL 50% DE DESCUENTO SOBRE EL VALOR DEL PLAN CONEXIÓN TOTAL CONTROL PORTA M, CONEXIÓN CONTROL FAMILIA L, BLACK CONEXIÓN TOTAL LIBRE 1XL Y BLACK CONEXIÓN TOTAL LIBRE 4XL DURANTE 12 MESES. EL DESCUENTO SE EFECTÚA SOBRE EL PRECIO REGULAR DEL ABONO VIGENTE AL MOMENTO DE LA APLICACIÓN. PARA HACER USO DE LA LÍNEA, LA MISMA DEBERÁ ENCONTRARSE ACTIVA SIN NINGÚN TIPO DE RESTRICCIÓN. OFERTA HABILITADA SOLO PARA USO PERSONAL, ESTÁ TOTALMENTE PROHIBIDO SU REVENTA Y/O USO COMERCIAL. LA DETECCIÓN DE SU USO INDEBIDO HABILITA A TELECOM ARGENTINA S.A A LA SUSPENSIÓN DE LA LÍNEA. MÁS INFORMACIÓN DE LOS PLANES EN WWW.PERSONAL.COM.AR/TIENDA/PLANES/ O *111. PROMOCIÓN NO ACUMULABLE CON OTROS DESCUENTOS. PRECIOS CONSUMIDOR FINAL CON IVA INCLUIDO. TELECOM ARGENTINA S.A. ALICIA MOREAU DE JUSTO 50. C.A.B.A. CUIT 30-63945373-8.
+            PROMOCIÓN DE ALCANCE NACIONAL, VÁLIDA DESDE EL 18/02/2020 HASTA EL 30/04/2020, EXCLUSIVAMENTE PARA CLIENTES CON DNI. OFERTA DE DESCUENTO: VÁLIDA ÚNICAMENTE PARA LA MODALIDAD DE PORTABILIDAD CON LOS PLANES PLAN 5GB PLUS, PLAN 8GB PLUS, PLAN 12GB BLACK Y PLAN 20GB BLACK. EL CLIENTE ACCEDE AL 50% DE DESCUENTO SOBRE EL VALOR DEL PLAN DURANTE 12 MESES. EL DESCUENTO SE EFECTÚA SOBRE EL PRECIO REGULAR DEL ABONO VIGENTE AL MOMENTO DE LA APLICACIÓN. DESCUENTO ADICIONAL DE $600 DURANTE 12 MESES SOBRE LA FACTURA DE FIBERTEL POR PORTAR SU LÍNEA HACIA PERSONAL BAJO UNA MISMA TITULARIDAD. PROMOCIÓN NO ACUMULABLE CON OTROS DESCUENTOS. PRECIOS PARA CONSUMIDOR FINAL IVA INCLUIDO. TELECOM ARGENTINA S.A. ALICIA MOREAU DE JUSTO 50. C.A.B.A. CUIT 30-63945373-8. <br><br>
+BENEFICIO DE ALCANCE NACIONAL VIGENTE DEL 15/12/2019 AL 30/04/2020 PARA PLANES PERSONAL CON FACTURA Y PERSONAL ABONO FIJO DE 5GB, 8GB, 12GB Y 20GB DEL SEGMENTO INDIVIDUOS. REQUIERE SER USUARIO ACTIVO DE LA APLICACIÓN MÓVIL FLOW APP. LOS PLANES CON CUOTAS DE DATOS DE 5GB Y 8GB OBTENDRÁN SIN CARGO 10GB DURANTE 30 DÍAS PARA SER UTILIZADOS EXCLUSIVAMENTE EN FLOW APP Y NO DESCONTARÁN DE LA CUOTA MENSUAL DEL PLAN. EL BENEFICIO DEBERÁ SER ACTIVADO POR PARTE DEL CLIENTE DESDE LA APP MI PERSONAL. UNA MISMA LÍNEA PERSONAL NO PODRÁ RECIBIR MÁS DE UN BENEFICIO DURANTE LA VIGENCIA DE ESTA PROMOCIÓN. EL BENEFICIO EXPIRARÁ AUTOMÁTICAMENTE AL FINALIZAR EL PLAZO DE 30 DÍAS DESDE SU ACTIVACIÓN O AL AGOTAR LA CUOTA DE 10GB, LO QUE SUCEDA PRIMERO. LOS PLANES BLACK CON CUOTAS DE DATOS DE 12GB Y 20GB RECIBIRÁN SIN CARGO 10GB POR CICLO DE FACTURACIÓN, NO ACUMULABLES ENTRE CICLOS, PARA SER UTILIZADOS EXCLUSIVAMENTE EN FLOW APP Y NO DESCONTARÁN DE LA CUOTA MENSUAL DEL PLAN. EN TODOS LOS CASOS, UNA VEZ CONSUMIDA LA CUOTA DE DATOS ASIGNADA PARA EL BENEFICIO SE UTILIZARÁN LOS DATOS DISPONIBLES SEGÚN EL PLAN. NO APLICA PARA LOS PLANES INTERNET 5GB/8GB/12GB NI EN ROAMING INTERNACIONAL. (*) LOS VALORES DE CONSUMO DE DATOS Y TIEMPOS DE REPRODUCCIÓN SEÑALADOS SON ESTIMADOS PARA FLOW APP PARA ANDROID CONFIGURADO EN PERFIL “AUTOMÁTICO” DE USO DE DATOS (FUNCIONALIDAD DISPONIBLE EN FLOW APP VERSIÓN 3.7.6 O SUPERIOR). CONSULTÁ LA OFERTA DE PASES ADICIONALES DISPONIBLES PARA LA COMPRA EN AUTOGESTION.PERSONAL.COM.AR Y LA APP MI PERSONAL O PARA MÁS INFORMACIÓN AL*111. TELECOM ARGENTINA S.A. ALICIA M. DE JUSTO 50. C.A.B.A. CUIT 30-63945373-8.
         </div>
         
         <!-- Modal footer -->

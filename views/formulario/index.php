@@ -81,6 +81,8 @@ HTML;
             'date',
             'ktoken',
             'plan',
+            'providerId',
+            'pubId',
 
             ['class' => 'yii\grid\ActionColumn'],
 

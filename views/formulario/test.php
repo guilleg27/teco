@@ -24,15 +24,6 @@ use yii\helpers\Url;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132110118-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-132110118-2');
-    </script>
     <!-- <script src="https://www.google.com/recaptcha/api.js?hl=es"></script> -->
     <script type="text/javascript">
       var verifyCallback = function(response) {
@@ -55,19 +46,19 @@ use yii\helpers\Url;
         // Renders the HTML element with id 'recaptcha1' as a reCAPTCHA widget.
         // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
         widgetId1 = grecaptcha.render('recaptcha1', {
-          'sitekey' : '6LfrrsAUAAAAAIfaPGvIb70PjsfDo5JTDoAVwy6R',
+          'sitekey' : '6LegpcAUAAAAAEGKEHG2xMHOb5aJIyyEWn4uQAi2',
           'callback' : verifyCallback
         });
         widgetId2 = grecaptcha.render(document.getElementById('recaptcha2'), {
-          'sitekey' : '6LdJsMAUAAAAAA2MhUqQsHya3AoTjP0z_TH02bkX',
+          'sitekey' : '6Levr8AUAAAAAOQY6cKWb1wEuTDpwfqilNN9STMz',
           'callback' : verifyCallback2
         });
         widgetId3 = grecaptcha.render(document.getElementById('recaptcha3'), {
-          'sitekey' : '6LdOsMAUAAAAABeC9kL6J2tENxQg3roOPhNSZPnD',
+          'sitekey' : '6LedAMEUAAAAAP9nefzFDH0Ipb-4y1qSOGKl6O6v',
           'callback' : verifyCallback3
         });
         widgetId4 = grecaptcha.render(document.getElementById('recaptcha4'), {
-          'sitekey' : '6LdRsMAUAAAAAGyzfKeUfPE0qdzlHOoz3zG0QBN0',
+          'sitekey' : '6LdKBsEUAAAAAB_QLUw89qeHU6mMWd6SlB8y3pY2',
           'callback' : verifyCallback4
         });
       };
@@ -104,13 +95,12 @@ use yii\helpers\Url;
         <!-- End Header -->
 
         <!-- Page Intro -->
-        <section id="inner-intro" class="container-fluid no-padding highlight portabilidad" data-background-img="<?= Url::to('@web/portabilidad/img/fondo-persona-desktop.jpg') ?>">
-                    <div class="intro-content">
+        <section id="inner-intro" class="container-fluid no-padding highlight portabilidad" data-background-img="<?= Url::to('@web/portabilidad/img/fondo-persona.jpg') ?>">
+                            <div class="intro-content">
                         <div class="intro-content-inner">
                            <h2 class="lefto title-pasate" style="margin-bottom: 0px; color: white">Pasate a Personal</h2>
-                            <h1 class="intro-title lefto" style="font-weight: 800; color: white; margin-bottom: 0px"><strong style="color: #FFD517">50%</strong> de descuento</h1>
-                                <h4 class="alt-title lefto intro-sub-title" style="color: white; margin-bottom: 0px">por 12 meses + <strong style="color: #FFD517; font-size: 30px;">10GB</strong> de regalo</h4>
-                                <h5 class="alt-title lefto intro-sub-title" style="color: white; margin-bottom: 0px; font-weight: 400">descargando <strong>Mi Personal</strong></h5>
+                            <h1 class="intro-title lefto" style="font-weight: 800; color: white"><strong style="color: #FFD517">50%</strong> de descuento</h1>
+                                <h4 class="alt-title lefto intro-sub-title" style="color: white">por 12 meses</h4>
                         </div>
                     </div>
         </section>
@@ -164,8 +154,6 @@ use yii\helpers\Url;
                             <input class="input-md form-full" type="hidden" id="form-plan" name="form-plan" value="5GB">
                             <input class="input-md form-full" type="hidden" id="form-ktoken" name="form-ktoken" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen" name="form-gen" value="gen1">
-                            <input class="input-md form-full" type="hidden" id="form-pubId" name="form-pubId" value="<?php echo $pubId ?>">
-                            <input class="input-md form-full" type="hidden" id="form-providerId" name="form-providerId" value="<?php echo $providerId ?>">
                              <div class="col-md-12" style="display: flex;justify-content: flex-start;flex-flow: column; height: 95px;">
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
@@ -183,11 +171,11 @@ use yii\helpers\Url;
                                <div>
                                 <div class="pricing-features">
                                     <ul>
-                                        <li style="text-decoration: line-through; font-size: 30px;">$1400</li>
+                                        <li style="text-decoration: line-through; font-size: 30px;">$1200</li>
                                         <li><div class="pricing-price">
                                     <p>
                                         <span class="dollar">$</span>
-                                        <span class="pricing-price-lg" style="font-weight: 600;">700</span>
+                                        <span class="pricing-price-lg" style="font-weight: 600;">600</span>
                                         <span class="pricing-price-sm">/ mes</span>
                                     </p>
                                 </div></li>
@@ -244,8 +232,6 @@ use yii\helpers\Url;
                             <input class="input-md form-full" type="hidden" id="form-plan8gb" name="form-plan8gb" value="8GB">
                             <input class="input-md form-full" type="hidden" id="form-ktoken8gb" name="form-ktoken8gb" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen8gb" name="form-gen8gb" value="gen2">
-                            <input class="input-md form-full" type="hidden" id="form-pubId8gb" name="form-pubId8gb" value="<?php echo $pubId ?>">
-                            <input class="input-md form-full" type="hidden" id="form-providerId8gb" name="form-providerId8gb" value="<?php echo $providerId ?>">
                              <div class="col-md-12" style="display: flex;justify-content: flex-start;flex-flow: column; height: 95px;">
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
@@ -263,11 +249,11 @@ use yii\helpers\Url;
                               <div>
                                 <div class="pricing-features">
                                     <ul>
-                                        <li style="text-decoration: line-through; font-size: 30px;">$2050</li>
+                                        <li style="text-decoration: line-through; font-size: 30px;">$1750</li>
                                         <li><div class="pricing-price">
                                     <p>
                                         <span class="dollar">$</span>
-                                        <span class="pricing-price-lg" style="font-weight: 600; font-size: 4em;">1025</span>
+                                        <span class="pricing-price-lg" style="font-weight: 600;">875</span>
                                         <span class="pricing-price-sm">/ mes</span>
                                     </p>
                                 </div></li>
@@ -324,8 +310,6 @@ use yii\helpers\Url;
                             <input class="input-md form-full" type="hidden" id="form-plan12gb" name="form-plan12gb" value="12GB">
                             <input class="input-md form-full" type="hidden" id="form-ktoken12gb" name="form-ktoken12gb" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen12gb" name="form-gen12gb" value="gen3">
-                            <input class="input-md form-full" type="hidden" id="form-pubId12gb" name="form-pubId12gb" value="<?php echo $pubId ?>">
-                            <input class="input-md form-full" type="hidden" id="form-providerId12gb" name="form-providerId12gb" value="<?php echo $providerId ?>">
                              <div class="col-md-12" style="display: flex;justify-content: flex-start;flex-flow: column; height: 95px;">
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
@@ -342,11 +326,11 @@ use yii\helpers\Url;
                             </div>
                             <div class="pricing-features">
                                 <ul>
-                                    <li style="text-decoration: line-through; font-size: 30px;">$2590</li>
+                                    <li style="text-decoration: line-through; font-size: 30px;">$2220</li>
                                     <li><div class="pricing-price">
                                 <p>
                                     <span class="dollar">$</span>
-                                    <span class="pricing-price-lg" style="font-weight: 600; font-size: 4em;">1295</span>
+                                    <span class="pricing-price-lg" style="font-weight: 600; font-size: 4em;">1110</span>
                                     <span class="pricing-price-sm">/ mes</span>
                                 </p>
                             </div></li>
@@ -402,8 +386,6 @@ use yii\helpers\Url;
                             <input class="input-md form-full" type="hidden" id="form-plan20gb" name="form-plan20gb" value="20GB">
                             <input class="input-md form-full" type="hidden" id="form-ktoken20gb" name="form-ktoken20gb" value="<?php echo $ktoken ?>">
                             <input class="input-md form-full" type="hidden" id="form-gen20gb" name="form-gen20gb" value="gen4">
-                            <input class="input-md form-full" type="hidden" id="form-pubId20gb" name="form-pubId20gb" value="<?php echo $pubId ?>">
-                            <input class="input-md form-full" type="hidden" id="form-providerId20gb" name="form-providerId20gb" value="<?php echo $providerId ?>">
                              <div class="col-md-12" style="display: flex;justify-content: flex-start;flex-flow: column; height: 95px;">
                               <div class="form-field-wrapper text-left" style="margin-bottom: 0px">
                                 <p>*Campos obligatorios</p>
@@ -420,11 +402,11 @@ use yii\helpers\Url;
                             </div>
                             <div class="pricing-features">
                                 <ul>
-                                    <li style="text-decoration: line-through; font-size: 30px;">$3150</li>
+                                    <li style="text-decoration: line-through; font-size: 30px;">$2800</li>
                                     <li><div class="pricing-price">
                                 <p>
                                     <span class="dollar">$</span>
-                                    <span class="pricing-price-lg" style="font-weight: 600; font-size: 4em;">1575</span>
+                                    <span class="pricing-price-lg" style="font-weight: 600; font-size: 4em;">1400</span>
                                     <span class="pricing-price-sm">/ mes</span>
                                 </p>
                             </div></li>
@@ -512,9 +494,9 @@ use yii\helpers\Url;
                     <div data-wow-delay="0.3s" data-wow-duration="2s" class="col-md-3 mb-10 wow fadeIn" style="visibility: visible; animation-duration: 2s; animation-delay: 0.1s; animation-name: fadeIn;">
                         <div class="content-box" style="text-align: center">
                             <div class="alt-icon-color">
-                                <i class="fa fa-gift" style="font-size: 60px;"></i>
+                                <i class="fa fa-wifi" style="font-size: 60px;"></i>
                             </div>
-                            <p style="font-size: 16px">Accedé a Beneficios <br> de <strong>Club Personal</strong></p>
+                            <p style="font-size: 16px">La red de internet 4G<br><strong>más rápida</strong> del país</p>
                         </div>
                     </div>
                     <div data-wow-delay="0.4s" data-wow-duration="2s" class="col-md-3 mb-10 wow fadeIn" style="visibility: visible; animation-duration: 2s; animation-delay: 0.1s; animation-name: fadeIn;">
@@ -522,7 +504,7 @@ use yii\helpers\Url;
                             <div class="alt-icon-color">
                                 <i class="fa fa-dollar" style="font-size: 60px;"></i>
                             </div>
-                            <p style="font-size: 16px">Si sos <strong>Cliente Fibertel</strong> ahorrá $600 en tu factura de internet</p>
+                            <p style="font-size: 16px">Si sos <strong>Cliente Fibertel</strong> ahorrá $500 en tu factura de internet</p>
                         </div>
                     </div>
                 </div>
@@ -544,8 +526,7 @@ use yii\helpers\Url;
         
         <!-- Modal body -->
         <div class="modal-body" style="font-size: 12px">
-            PROMOCIÓN DE ALCANCE NACIONAL, VÁLIDA DESDE EL 18/02/2020 HASTA EL 30/04/2020, EXCLUSIVAMENTE PARA CLIENTES CON DNI. OFERTA DE DESCUENTO: VÁLIDA ÚNICAMENTE PARA LA MODALIDAD DE PORTABILIDAD CON LOS PLANES PLAN 5GB PLUS, PLAN 8GB PLUS, PLAN 12GB BLACK Y PLAN 20GB BLACK. EL CLIENTE ACCEDE AL 50% DE DESCUENTO SOBRE EL VALOR DEL PLAN DURANTE 12 MESES. EL DESCUENTO SE EFECTÚA SOBRE EL PRECIO REGULAR DEL ABONO VIGENTE AL MOMENTO DE LA APLICACIÓN. DESCUENTO ADICIONAL DE $600 DURANTE 12 MESES SOBRE LA FACTURA DE FIBERTEL POR PORTAR SU LÍNEA HACIA PERSONAL BAJO UNA MISMA TITULARIDAD. PROMOCIÓN NO ACUMULABLE CON OTROS DESCUENTOS. PRECIOS PARA CONSUMIDOR FINAL IVA INCLUIDO. TELECOM ARGENTINA S.A. ALICIA MOREAU DE JUSTO 50. C.A.B.A. CUIT 30-63945373-8. <br><br>
-BENEFICIO DE ALCANCE NACIONAL VIGENTE DEL 15/12/2019 AL 30/04/2020 PARA PLANES PERSONAL CON FACTURA Y PERSONAL ABONO FIJO DE 5GB, 8GB, 12GB Y 20GB DEL SEGMENTO INDIVIDUOS. REQUIERE SER USUARIO ACTIVO DE LA APLICACIÓN MÓVIL FLOW APP. LOS PLANES CON CUOTAS DE DATOS DE 5GB Y 8GB OBTENDRÁN SIN CARGO 10GB DURANTE 30 DÍAS PARA SER UTILIZADOS EXCLUSIVAMENTE EN FLOW APP Y NO DESCONTARÁN DE LA CUOTA MENSUAL DEL PLAN. EL BENEFICIO DEBERÁ SER ACTIVADO POR PARTE DEL CLIENTE DESDE LA APP MI PERSONAL. UNA MISMA LÍNEA PERSONAL NO PODRÁ RECIBIR MÁS DE UN BENEFICIO DURANTE LA VIGENCIA DE ESTA PROMOCIÓN. EL BENEFICIO EXPIRARÁ AUTOMÁTICAMENTE AL FINALIZAR EL PLAZO DE 30 DÍAS DESDE SU ACTIVACIÓN O AL AGOTAR LA CUOTA DE 10GB, LO QUE SUCEDA PRIMERO. LOS PLANES BLACK CON CUOTAS DE DATOS DE 12GB Y 20GB RECIBIRÁN SIN CARGO 10GB POR CICLO DE FACTURACIÓN, NO ACUMULABLES ENTRE CICLOS, PARA SER UTILIZADOS EXCLUSIVAMENTE EN FLOW APP Y NO DESCONTARÁN DE LA CUOTA MENSUAL DEL PLAN. EN TODOS LOS CASOS, UNA VEZ CONSUMIDA LA CUOTA DE DATOS ASIGNADA PARA EL BENEFICIO SE UTILIZARÁN LOS DATOS DISPONIBLES SEGÚN EL PLAN. NO APLICA PARA LOS PLANES INTERNET 5GB/8GB/12GB NI EN ROAMING INTERNACIONAL. (*) LOS VALORES DE CONSUMO DE DATOS Y TIEMPOS DE REPRODUCCIÓN SEÑALADOS SON ESTIMADOS PARA FLOW APP PARA ANDROID CONFIGURADO EN PERFIL “AUTOMÁTICO” DE USO DE DATOS (FUNCIONALIDAD DISPONIBLE EN FLOW APP VERSIÓN 3.7.6 O SUPERIOR). CONSULTÁ LA OFERTA DE PASES ADICIONALES DISPONIBLES PARA LA COMPRA EN AUTOGESTION.PERSONAL.COM.AR Y LA APP MI PERSONAL O PARA MÁS INFORMACIÓN AL*111. TELECOM ARGENTINA S.A. ALICIA M. DE JUSTO 50. C.A.B.A. CUIT 30-63945373-8.
+            PROMOCIÓN DE ALCANCE NACIONAL, VÁLIDA DESDE EL 01/11/2019 HASTA EL 31/01/2020, EXCLUSIVAMENTE PARA CLIENTES CON DNI. OFERTA DE DESCUENTO: VÁLIDA ÚNICAMENTE PARA LA MODALIDAD DE PORTABILIDAD CON LOS PLANES CONEXIÓN TOTAL CONTROL PORTA M, CONEXIÓN CONTROL FAMILIA L, BLACK CONEXIÓN TOTAL LIBRE 1XL Y BLACK CONEXIÓN TOTAL LIBRE 4XL. PRECIOS REGULARES MENSUALES DE LOS ABONOS HASTA EL 17/11/2019 $1.020, $1.500, $1.900 Y $2.400, RESPECTIVAMENTE; A PARTIR DEL 18/11/2019 $1.200, $1.750, $2.220 Y $2.800, RESPECTIVAMENTE. EL CLIENTE ACCEDE AL 50% DE DESCUENTO SOBRE EL VALOR DEL PLAN DURANTE 12 MESES. EL DESCUENTO SE EFECTÚA SOBRE EL PRECIO REGULAR DEL ABONO VIGENTE AL MOMENTO DE LA APLICACIÓN. PROMOCIÓN NO ACUMULABLE CON OTROS DESCUENTOS. PRECIOS PARA CONSUMIDOR FINAL. PARA HACER USO DE LA LÍNEA, LA MISMA DEBERÁ ENCONTRARSE ACTIVA SIN NINGÚN TIPO DE RESTRICCIÓN. OFERTA HABILITADA SOLO PARA USO PERSONAL, ESTÁ TOTALMENTE PROHIBIDO SU REVENTA Y/O USO COMERCIAL. LA DETECCIÓN DE SU USO INDEBIDO HABILITA A TELECOM ARGENTINA S.A A LA SUSPENSIÓN DE LA LÍNEA. MÁS INFORMACIÓN DE LOS PLANES EN WWW.PERSONAL.COM.AR/TIENDA/PLANES/ O *111. TELECOM ARGENTINA S.A. ALICIA MOREAU DE JUSTO 50. C.A.B.A. CUIT 30-63945373-8.
         </div>
         
         <!-- Modal footer -->
@@ -604,7 +585,7 @@ BENEFICIO DE ALCANCE NACIONAL VIGENTE DEL 15/12/2019 AL 30/04/2020 PARA PLANES P
     <script src="<?= Url::to('@web/portabilidad/js/plugins/jquery.singlePageNav.min.js') ?>" type="text/javascript"></script>
     <script src="<?= Url::to('@web/portabilidad/js/plugins/jquery.validate.min.js') ?>" type="text/javascript"></script>
     <script src="<?= Url::to('@web/portabilidad/js/send-subscribe.js') ?>" type="text/javascript"></script>
-    <script src="<?= Url::to('@web/portabilidad/js/contact-form.js') ?>" type="text/javascript"></script>
+    <script src="<?= Url::to('@web/portabilidad/js/contact-form-test.js') ?>" type="text/javascript"></script>
     <script src="<?= Url::to('@web/portabilidad/js/theme.js') ?>" type="text/javascript"></script>
 
     <script>function show5gb() {

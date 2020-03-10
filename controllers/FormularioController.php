@@ -26,12 +26,12 @@ class FormularioController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb'],
+                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
                     [
-                        'actions' => ['promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb'],
+                        'actions' => ['promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -161,28 +161,77 @@ class FormularioController extends Controller
 
     public function actionPromo()
     {
-        $data = Yii::$app->request;
-        if ($data->post('phone')) {
-            $code = 200;
+        $data               = Yii::$app->request;
+        $gen                = $data->post('gen');
+        $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
+
+        switch ($gen) {
+            case 'gen1':
+                $params = array(
+                    'secret'=>'6LfrrsAUAAAAALROkPE1HbgQXCLHRegj_HQ-wQ-i',
+                    'response'=>$data->post('captcha5gb') ?: null
+                );
+                break;
+            
+            case 'gen2':
+                $params = array(
+                    'secret'=>'6LdJsMAUAAAAAFP5HXRZp_g77ohXYbnWZ-g84hBH',
+                    'response'=>$data->post('captcha8gb') ?: null
+                );
+                break;
+
+            case 'gen3':
+                $params = array(
+                    'secret'=>'6LdOsMAUAAAAADi62_7zZJzJZikExL3qeTQoiJNd',
+                    'response'=>$data->post('captcha12gb') ?: null
+                );
+                break;
+
+            case 'gen4':
+                $params = array(
+                    'secret'=>'6LdRsMAUAAAAAEzgtJuFaar1pFNagLjyTcKrKesj',
+                    'response'=>$data->post('captcha20gb') ?: null
+                );
+                break;
+        }
+
+        $options = array(
+            CURLOPT_URL            => $url_verify_captcha,
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => http_build_query($params),
+            CURLOPT_RETURNTRANSFER => true
+        );
+
+        $curl   = curl_init();
+        curl_setopt_array($curl,$options);
+        $result = curl_exec($curl);
+        curl_close($curl);
+        $gresponse  = json_decode($result);
+
+        if ( $data->post('phone') && ($gresponse->success == true) ) {
             $model = new Formulario();
             $model->nombre_completo = $data->post('name');
-            $model->email = $data->post('email');
-            $model->celular = $data->post('phone');
-            $model->ktoken = $data->post('ktoken');
-            $model->plan = $data->post('plan');
-            $model->date = date('Y-m-d H:i:s');
+            $model->email           = $data->post('email');
+            $model->celular         = $data->post('phone');
+            $model->ktoken          = $data->post('ktoken');
+            $model->plan            = $data->post('plan');
+            $model->pubId           = $data->post('pubId');
+            $model->providerId      = $data->post('providerId');
+            $model->date            = date('Y-m-d H:i:s');
 
             if($model->save()){
                 //S2S a kickads
-                $url    = "http://www.kickadserver.mobi/convLog/?ktoken=".$model->ktoken;
+                $url    = "http://www.sidekickads.com/convLog/?ktoken=".$model->ktoken;
                 $curl   = curl_init($url);
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $result = curl_exec($curl);
             }
+            $success = 200;
         } else {
-            $code = 400;
+            $success = 400;
         }
-        return \yii\helpers\Json::encode($code);
+
+        return \yii\helpers\Json::encode($success);
     }
 
     /**
@@ -192,50 +241,159 @@ class FormularioController extends Controller
     public function actionGenerica()
     {
         $this->layout = 'vacio';
-        $request = Yii::$app->request;
-        $ktoken = $request->get('ktoken') ?: "empty";
+        $request      = Yii::$app->request;
+        $ktoken       = $request->get('ktoken') ?: "empty";
+        $pubId        = $request->get('pubId') ?: null;
+        $providerId   = $request->get('providerId') ?: null;
         return $this->render('generica', [
-            'ktoken' => $ktoken
+            'ktoken'     => $ktoken,
+            'pubId'      => $pubId,
+            'providerId' => $providerId
         ]);
     }
 
     public function actionPromo5gb()
     {
         $this->layout = 'vacio';
-        $request = Yii::$app->request;
-        $ktoken = $request->get('ktoken') ?: "empty";
+        $request      = Yii::$app->request;
+        $ktoken       = $request->get('ktoken') ?: "empty";
+        $pubId        = $request->get('pubId') ?: null;
+        $providerId   = $request->get('providerId') ?: null;
         return $this->render('promo5gb', [
-            'ktoken' => $ktoken
+            'ktoken'     => $ktoken,
+            'pubId'      => $pubId,
+            'providerId' => $providerId
         ]);
     }
 
     public function actionPromo8gb()
     {
         $this->layout = 'vacio';
-        $request = Yii::$app->request;
-        $ktoken = $request->get('ktoken') ?: "empty";
+        $request      = Yii::$app->request;
+        $ktoken       = $request->get('ktoken') ?: "empty";
+        $pubId        = $request->get('pubId') ?: null;
+        $providerId   = $request->get('providerId') ?: null;
+
         return $this->render('promo8gb', [
-            'ktoken' => $ktoken
+            'ktoken'     => $ktoken,
+            'pubId'      => $pubId,
+            'providerId' => $providerId
         ]);
     }
 
     public function actionPromo12gb()
     {
         $this->layout = 'vacio';
-        $request = Yii::$app->request;
-        $ktoken = $request->get('ktoken') ?: "empty";
+        $request      = Yii::$app->request;
+        $ktoken       = $request->get('ktoken') ?: "empty";
+        $pubId        = $request->get('pubId') ?: null;
+        $providerId   = $request->get('providerId') ?: null;
+
         return $this->render('promo12gb', [
-            'ktoken' => $ktoken
+            'ktoken'     => $ktoken,
+            'pubId'      => $pubId,
+            'providerId' => $providerId
         ]);
     }
 
     public function actionPromo20gb()
     {
         $this->layout = 'vacio';
+        $request      = Yii::$app->request;
+        $ktoken       = $request->get('ktoken') ?: "empty";
+        $pubId        = $request->get('pubId') ?: null;
+        $providerId   = $request->get('providerId') ?: null;
+
+        return $this->render('promo20gb', [
+            'ktoken'     => $ktoken,
+            'pubId'      => $pubId,
+            'providerId' => $providerId
+        ]);
+    }
+
+    public function actionTest()
+    {
+        $this->layout = 'vacio';
         $request = Yii::$app->request;
         $ktoken = $request->get('ktoken') ?: "empty";
-        return $this->render('promo20gb', [
+        return $this->render('test', [
             'ktoken' => $ktoken
         ]);
     }
+
+    /* Only for test */
+    public function actionPromotest()
+    {
+        $data    = Yii::$app->request;
+        $gen     = $data->post('gen');
+        $url_verify_captcha = "https://www.google.com/recaptcha/api/siteverify";
+
+        switch ($gen) {
+            case 'gen1':
+                $params = array(
+                    'secret'=>'6LegpcAUAAAAAO5yP9qjiK24eqptWMp-N2B3jgeG',
+                    'response'=>$data->post('5gb-captcha') ?: null
+                );
+                break;
+            
+            case 'gen2':
+                $params = array(
+                    'secret'=>'6Levr8AUAAAAABbNj-AOA3zI7ctHgtVQEi_YTZSw',
+                    'response'=>$data->post('8gb-captcha') ?: null
+                );
+                break;
+
+            case 'gen3':
+                $params = array(
+                    'secret'=>'6LedAMEUAAAAAGYCEK25glzptngrUtS5IDLhN4jn',
+                    'response'=>$data->post('12gb-captcha') ?: null
+                );
+                break;
+
+            case 'gen4':
+                $params = array(
+                    'secret'=>'6LdKBsEUAAAAAEwFByEYJP45IhIwd03WaFI1cxd1',
+                    'response'=>$data->post('20gb-captcha') ?: null
+                );
+                break;
+        }
+
+        $options = array(
+            CURLOPT_URL            => $url_verify_captcha,
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => http_build_query($params),
+            CURLOPT_RETURNTRANSFER => true
+        );
+
+        $curl   = curl_init();
+        curl_setopt_array($curl,$options);
+        $result = curl_exec($curl);
+        curl_close($curl);
+        $gresponse  = json_decode($result);
+        return \yii\helpers\Json::encode($data->post());
+
+        if ( $data->post('phone') && ($gresponse->success == true) ) {
+            $model = new Formulario();
+            $model->nombre_completo = $data->post('name');
+            $model->email           = $data->post('email');
+            $model->celular         = $data->post('phone');
+            $model->ktoken          = $data->post('ktoken');
+            $model->plan            = $data->post('plan');
+            $model->date            = date('Y-m-d H:i:s');
+
+            if($model->save()){
+                //S2S a kickads
+                $url    = "http://www.sidekickads.com/convLog/?ktoken=".$model->ktoken;
+                $curl   = curl_init($url);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                $result = curl_exec($curl);
+            }
+            $success = 200;
+        } else {
+            $success = 400;
+        }
+
+        return \yii\helpers\Json::encode($success);
+    }
+
 }

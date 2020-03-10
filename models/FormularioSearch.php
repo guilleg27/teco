@@ -18,7 +18,7 @@ class FormularioSearch extends Formulario
     {
         return [
             [['id'], 'integer'],
-            [['nombre_completo', 'email', 'celular', 'date', 'ktoken', 'plan', 'pais', 'ciudad', 'carrier'], 'safe'],
+            [['nombre_completo', 'email', 'celular', 'date', 'ktoken', 'plan', 'pais', 'ciudad', 'carrier', 'pubId', 'providerId'], 'safe'],
         ];
     }
 
@@ -79,7 +79,9 @@ class FormularioSearch extends Formulario
             ->andFilterWhere(['like', 'plan', $this->plan])
             ->andFilterWhere(['like', 'pais', $this->pais])
             ->andFilterWhere(['like', 'ciudad', $this->ciudad])
-            ->andFilterWhere(['like', 'carrier', $this->carrier]);
+            ->andFilterWhere(['like', 'carrier', $this->carrier])
+            ->andFilterWhere(['like', 'pubId', $this->pubId])
+            ->andFilterWhere(['like', 'providerId', $this->providerId]);
 
         return $dataProvider;
     }

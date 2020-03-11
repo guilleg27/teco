@@ -415,7 +415,8 @@ class FormularioController extends Controller
         $params['startDate']   = $startDate;
         $params['endDate']     = $endDate;
         $dataProvider = $searchModel->search($params);
-        return ExcelView::widget([
+        echo '';
+        ExcelView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'fullExportType'=> 'csv', //can change to html,xls,csv and so on

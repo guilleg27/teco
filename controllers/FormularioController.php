@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use arturoliveira\ExcelView;
 
 
 /**
@@ -26,7 +27,7 @@ class FormularioController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest', 'validar'],
+                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest', 'validar', 'export'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -403,5 +404,39 @@ class FormularioController extends Controller
         
         Yii::$app->response->statusCode = $response['code'];
         return \yii\helpers\Json::encode($response);
+    }
+
+    public function actionExport() {
+        $searchModel = new FormularioSearch();
+        $request       = Yii::$app->request;
+        $startDate     = $request->get('startDate') ? $request->get('startDate') : date('Y-m-d',strtotime('yesterday'));
+        $endDate       = $request->get('endDate') ? $request->get('endDate') : date('Y-m-d',strtotime('NOW'));
+
+        $params['startDate']   = $startDate;
+        $params['endDate']     = $endDate;
+        $dataProvider = $searchModel->search($params);
+        ExcelView::widget([
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'fullExportType'=> 'csv', //can change to html,xls,csv and so on
+            'grid_mode' => 'export',
+            'columns' => [
+                    'id',
+                    'nombre_completo',
+                    'email:email',
+                    'celular',
+                    'date',
+                    'ktoken',
+                    'plan',
+                    'providerId',
+                    'pubId',
+                    [
+                        'attribute' => 'valido',
+                        'value' => function($model){
+                            return $model->valido ? 'Valido' : 'Invalido';
+                        }
+                    ]
+              ],
+        ]);
     }
 }

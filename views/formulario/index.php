@@ -7,6 +7,7 @@ use yii\widgets\Pjax;
 use johnitvn\ajaxcrud\CrudAsset; 
 use yii\widgets\ActiveForm;
 use kartik\date\DatePicker;
+use arturoliveira\ExcelView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\FormularioSearch */
@@ -55,6 +56,16 @@ HTML;
             <br />
             <div class="form-group">
                 <?= Html::submitButton('Filter', ['class' => 'btn btn-primary btn-md']) ?>
+                <?= Html::a('Export', [
+                        'formulario/export', 
+                        'startDate'=>$startDate, 
+                        'endDate'=>$endDate, 
+                    ], 
+                    [
+                        'class' => 'btn btn-primary btn-md', 
+                        'target' => '_blank'
+                    ]) 
+                ?>
             </div>
             <?php ActiveForm::end(); ?>
         </div>
@@ -115,13 +126,8 @@ HTML;
             'after' => Html::a('<i class="glyphicon glyphicon-repeat"></i> Reset List', ['index'], ['class' => 'btn btn-info']),
             'showFooter' => false
         ],
-        'export' => [
-            'label'=>'Export',
-        ],
-        'exportConfig' => [
-            GridView::CSV => ['filename' => 'TelecomLeads'],
-            GridView::EXCEL => ['filename' => 'TelecomLeads'],
-        ]
+        'export' => false,
+        
     ]); Pjax::end(); ?>
 
 

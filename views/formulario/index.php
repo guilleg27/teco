@@ -103,7 +103,7 @@ HTML;
             ['class' => 'yii\grid\ActionColumn'],
 
         ],
-        'responsive' => true,
+        'responsive' => false,
         'hover' => true,
         'condensed' => true,
         'floatHeader' => true,

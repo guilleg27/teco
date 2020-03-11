@@ -26,7 +26,7 @@ class FormularioController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest'],
+                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest', 'validar'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -396,4 +396,12 @@ class FormularioController extends Controller
         return \yii\helpers\Json::encode($success);
     }
 
+    public function actionValidar($id){
+        $model = $this->findModel($id);
+        $model->valido = !$model->valido;
+        $response = $model->save() ? ['code' => 200, 'message' => 'ok'] : ['code' => 400, 'message' => 'error'];
+        
+        Yii::$app->response->statusCode = $response['code'];
+        return \yii\helpers\Json::encode($response);
+    }
 }

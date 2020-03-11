@@ -415,8 +415,7 @@ class FormularioController extends Controller
         $params['startDate']   = $startDate;
         $params['endDate']     = $endDate;
         $dataProvider = $searchModel->search($params);
-        echo '';
-        ExcelView::widget([
+        return ExcelView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'fullExportType'=> 'csv', //can change to html,xls,csv and so on
@@ -431,12 +430,7 @@ class FormularioController extends Controller
                     'plan',
                     'providerId',
                     'pubId',
-                    [
-                        'attribute' => 'valido',
-                        'value' => function($model){
-                            return $model->valido ? 'Valido' : 'Invalido';
-                        }
-                    ]
+                    'valido'
               ],
         ]);
     }

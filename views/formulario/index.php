@@ -105,9 +105,12 @@ HTML;
                                 var response = JSON.parse(data);
                                 if(response.code === 200){
                                     $("#'.$model->id.'").html( $("#'.$model->id.'").html() === "Valido" ? "Invalido" : "Valido" );
+                                    $("#'.$model->id.'").removeClass();
+                                    $("#'.$model->id.'").addClass( $("#'.$model->id.'").html() === "Valido" ? "btn btn-success" : "btn btn-danger" );
                                 }
                             });
                         ',
+                        'class' => $model->valido ? 'btn btn-success' : 'btn btn-danger'
                     ]);
                 }
             ],

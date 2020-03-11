@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use kartik\grid\GridView;
 use yii\widgets\Pjax;
 use johnitvn\ajaxcrud\CrudAsset; 
@@ -83,7 +84,22 @@ HTML;
             'plan',
             'providerId',
             'pubId',
-
+            [
+                'format' => 'raw',
+                'value' => function($model){
+                    return Html::a($model->valido ? 'Valido' : 'Invalido', 'javascript:void(0);', [
+                        'id' => $model->id,
+                        'onClick' => '
+                            $.post( "'.Url::to(['formulario/validar', 'id' => $model->id]).'", function( data ) {
+                                var response = JSON.parse(data);
+                                if(response.code === 200){
+                                    $("#'.$model->id.'").html( $("#'.$model->id.'").html() === "Valido" ? "Invalido" : "Valido" );
+                                }
+                            });
+                        ',
+                    ]);
+                }
+            ],
             ['class' => 'yii\grid\ActionColumn'],
 
         ],

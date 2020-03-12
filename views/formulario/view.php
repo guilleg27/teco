@@ -36,6 +36,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'date',
             'ktoken',
             'plan',
+            'pais',
+            'ciudad',
+            'carrier'
         ],
     ]) ?>
 

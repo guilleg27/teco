@@ -95,6 +95,9 @@ HTML;
             'plan',
             'providerId',
             'pubId',
+            'pais',
+            'ciudad',
+            'carrier',
             [
                 'format' => 'raw',
                 'value' => function($model){

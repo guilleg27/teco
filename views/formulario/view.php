@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'carrier',
             [
                 'attribute' => 'valido',
-                'value' => $model->valido ? 'Valido' : 'Invalido',
+                'value' => $model->valido ? 'Si' : 'No',
             ]
         ],
     ]) ?>

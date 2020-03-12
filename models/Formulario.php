@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use IP2Location;
 
 /**
  * This is the model class for table "formulario".
@@ -57,5 +58,14 @@ class Formulario extends \yii\db\ActiveRecord
             'pubId' => 'Pub ID',
             'providerId' => 'Provider ID',
         ];
+    }
+
+    public function setIp2Location(){
+        $ip = Yii::$app->request->userIP;
+        $db = new \IP2Location\Database('../data/ip2location.BIN', \IP2Location\Database::FILE_IO);
+        $records = $db->lookup($ip, \IP2Location\Database::ALL);
+        $this->pais = $records['countryName'];
+        $this->ciudad = $records['cityName'];
+        $this->carrier = $records['mobileCarrierName'] == '-' ? 'WiFi' : $records['mobileCarrierName'];
     }
 }

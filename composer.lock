@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "acb14b7ed752c2e56f3e0a20f193c820",
+    "content-hash": "b2518055d5e21e51a5de799e2007129e",
     "packages": [
         {
             "name": "arturoliveira/yii2-excelview",
@@ -255,6 +255,46 @@
                 "html"
             ],
             "time": "2019-07-14T18:58:38+00:00"
+        },
+        {
+            "name": "ip2location/ip2location-php",
+            "version": "8.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chrislim2888/IP2Location-PHP-Module.git",
+                "reference": "e0e7a98e2826bda3260cd8bd36b006e1479c8cf3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chrislim2888/IP2Location-PHP-Module/zipball/e0e7a98e2826bda3260cd8bd36b006e1479c8cf3",
+                "reference": "e0e7a98e2826bda3260cd8bd36b006e1479c8cf3",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "IP2Location.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "IP2Location",
+                    "email": "support@ip2location.com",
+                    "homepage": "http://www.ip2location.com"
+                }
+            ],
+            "description": "[Official Release] IP2Location PHP API to get location info from IPv4 and IPv6 address.",
+            "homepage": "http://www.ip2location.com",
+            "keywords": [
+                "geolocation",
+                "ip2location",
+                "ip2locationlite"
+            ],
+            "time": "2019-10-09T01:00:20+00:00"
         },
         {
             "name": "johnitvn/yii2-ajaxcrud",
@@ -2326,6 +2366,7 @@
                 "functional testing",
                 "unit testing"
             ],
+            "abandoned": true,
             "time": "2018-02-26T23:42:52+00:00"
         },
         {

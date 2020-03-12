@@ -11,7 +11,6 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use arturoliveira\ExcelView;
 
-
 /**
  * FormularioController implements the CRUD actions for Formulario model.
  */
@@ -27,12 +26,12 @@ class FormularioController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest', 'validar', 'export'],
+                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest', 'validar', 'export', 'testlocation'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
                     [
-                        'actions' => ['promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest'],
+                        'actions' => ['promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest', 'testlocation'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -219,6 +218,7 @@ class FormularioController extends Controller
             $model->pubId           = $data->post('pubId');
             $model->providerId      = $data->post('providerId');
             $model->date            = date('Y-m-d H:i:s');
+            $model->setIp2Location();
 
             if($model->save()){
                 //S2S a kickads
@@ -381,7 +381,8 @@ class FormularioController extends Controller
             $model->ktoken          = $data->post('ktoken');
             $model->plan            = $data->post('plan');
             $model->date            = date('Y-m-d H:i:s');
-
+            $model->setIp2Location();
+            
             if($model->save()){
                 //S2S a kickads
                 $url    = "http://www.sidekickads.com/convLog/?ktoken=".$model->ktoken;
@@ -433,5 +434,11 @@ class FormularioController extends Controller
                     'valido'
               ],
         ]);
+    }
+
+    public function actionTestlocation(){
+        $model = new Formulario();
+        $model->setIp2Location();
+        var_dump($model->ciudad, $model->pais, $model->carrier);
     }
 }

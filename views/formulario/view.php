@@ -38,7 +38,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'plan',
             'pais',
             'ciudad',
-            'carrier'
+            'carrier',
+            [
+                'attribute' => 'valido',
+                'value' => $model->valido ? 'Valido' : 'Invalido',
+            ]
         ],
     ]) ?>
 

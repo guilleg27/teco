@@ -52,10 +52,10 @@ class FormularioSearch extends Formulario
 
         $query = Formulario::find();
         $query->where(['between', 'date', $startDate, date('Y-m-d',strtotime('+1 day' , strtotime($endDate))) ]);
-        $query->andWhere(['or',
-           ['pais'=>'Argentina'],
-           ['pais'=>null]
-        ]);
+        // $query->andWhere(['or',
+        //    ['pais'=>'Argentina'],
+        //    ['pais'=>null]
+        // ]);
         $query->andWhere(['<>','UPPER(ciudad)', 'TIERRA DEL FUEGO']);
 
         // if(Yii::$app->user->identity->username == 'personal'){

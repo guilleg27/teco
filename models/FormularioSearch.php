@@ -52,15 +52,21 @@ class FormularioSearch extends Formulario
 
         $query = Formulario::find();
         $query->where(['between', 'date', $startDate, date('Y-m-d',strtotime('+1 day' , strtotime($endDate))) ]);
-        // $query->andWhere(['or',
-        //    ['pais'=>'Argentina'],
-        //    ['pais'=>null]
-        // ]);
-        // $query->andWhere(['<>','UPPER(ciudad)', 'TIERRA DEL FUEGO']);
+        $query->andWhere(['or',
+           ['pais'=>'Argentina'],
+           ['pais'=>null],
+           ['pais'=>'-']
+        ]);
+        $query->andWhere(['or',
+           ['<>','UPPER(ciudad)', 'TIERRA DEL FUEGO'],
+           ['ciudad'=>null],
+           ['ciudad'=>'-']
+        ]);
+        $query->andWhere(['or',
+           ['<>','UPPER(carrier)', 'PERSONAL'],
+           ['carrier'=>null],
+        ]);
 
-        // if(Yii::$app->user->identity->username == 'personal'){
-            // $query->andWhere(['<>','carrier', 'Personal']);
-        // }
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([

@@ -111,9 +111,6 @@ HTML;
                 'attribute' => 'carrier',
                 'visible' => Yii::$app->user->identity->username != 'personal'
             ],
-            'pais',
-            'ciudad',
-            'carrier',
             [
                 'format' => 'raw',
                 'value' => function($model){

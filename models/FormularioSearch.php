@@ -56,10 +56,10 @@ class FormularioSearch extends Formulario
         //    ['pais'=>'Argentina'],
         //    ['pais'=>null]
         // ]);
-        $query->andWhere(['<>','UPPER(ciudad)', 'TIERRA DEL FUEGO']);
+        // $query->andWhere(['<>','UPPER(ciudad)', 'TIERRA DEL FUEGO']);
 
         // if(Yii::$app->user->identity->username == 'personal'){
-            $query->andWhere(['<>','carrier', 'Personal']);
+            // $query->andWhere(['<>','carrier', 'Personal']);
         // }
         // add conditions that should always apply here
 

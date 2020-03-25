@@ -99,6 +99,18 @@ HTML;
                 'attribute' => 'pubId',
                 'visible' => Yii::$app->user->identity->username != 'personal'
             ],
+            [
+                'attribute' => 'pais',
+                'visible' => Yii::$app->user->identity->username != 'personal'
+            ],
+            [
+                'attribute' => 'ciudad',
+                'visible' => Yii::$app->user->identity->username != 'personal'
+            ],
+            [
+                'attribute' => 'carrier',
+                'visible' => Yii::$app->user->identity->username != 'personal'
+            ],
             'pais',
             'ciudad',
             'carrier',

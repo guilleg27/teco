@@ -52,9 +52,9 @@ class Formulario extends \yii\db\ActiveRecord
             'date' => 'Fecha',
             'ktoken' => 'Ktoken',
             'plan' => 'Plan',
-            'pais' => 'pais',
-            'ciudad' => 'ciudad',
-            'carrier' => 'carrier',
+            'pais' => 'País',
+            'ciudad' => 'Ciudad',
+            'carrier' => 'Carrier',
             'pubId' => 'Pub ID',
             'providerId' => 'Provider ID',
         ];

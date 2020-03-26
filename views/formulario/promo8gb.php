@@ -87,7 +87,7 @@ use yii\helpers\Url;
                      <div class="lefto col-lg-5 col-md-12" style="float: right">
                             <h2 class="title-pasate" style="margin-bottom: 0px; color: white; font-weight: 600;">PLAN 8GB</h2>
                             <h1 class="intro-title" style="font-weight: 800; color: white"><strong style="color: #FFD517">50%</strong> de descuento</h1>
-                            <h4 class="alt-title intro-sub-title" style="color: white; margin-bottom: 0px">por 12 meses + <strong style="color: #FFD517; font-size: 30px;">10GB</strong> de regalo</h4>
+                            <h4 class="alt-title intro-sub-title" style="color: white; margin-bottom: 0px">por 12 meses + <strong style="color: #FFD517; font-size: 30px;">1GB</strong> de regalo</h4>
                             <h5 class="alt-title intro-sub-title" style="color: white; font-weight: 400">descargando <strong>Mi Personal</strong></h5>
                             <h5 class="alt-title intro-sub-title" style="color: white;">¡Envianos tus datos para aprovechar la promoción!</h5>
                             <h5 class="alt-title intro-sub-title bye" style="color: white;text-transform: none;font-size: 16px;"><i class="fa fa-whatsapp" style="font-size: 22px;color: mediumaquamarine"></i> Whatsapp gratis</h5>

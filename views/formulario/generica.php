@@ -109,7 +109,7 @@ use yii\helpers\Url;
                         <div class="intro-content-inner">
                            <h2 class="lefto title-pasate" style="margin-bottom: 0px; color: white">Pasate a Personal</h2>
                             <h1 class="intro-title lefto" style="font-weight: 800; color: white; margin-bottom: 0px"><strong style="color: #FFD517">50%</strong> de descuento</h1>
-                                <h4 class="alt-title lefto intro-sub-title" style="color: white; margin-bottom: 0px">por 12 meses + <strong style="color: #FFD517; font-size: 30px;">10GB</strong> de regalo</h4>
+                                <h4 class="alt-title lefto intro-sub-title" style="color: white; margin-bottom: 0px">por 12 meses + <strong style="color: #FFD517; font-size: 30px;">1GB</strong> de regalo</h4>
                                 <h5 class="alt-title lefto intro-sub-title" style="color: white; margin-bottom: 0px; font-weight: 400">descargando <strong>Mi Personal</strong></h5>
                         </div>
                     </div>

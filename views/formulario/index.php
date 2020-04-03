@@ -99,9 +99,15 @@ HTML;
                 'attribute' => 'pubId',
                 'visible' => Yii::$app->user->identity->username != 'personal'
             ],
-            'pais',
-            'ciudad',
-            'carrier',
+            [
+                'attribute' => 'pais',
+            ],
+            [
+                'attribute' => 'ciudad',
+            ],
+            [
+                'attribute' => 'carrier',
+            ],
             [
                 'format' => 'raw',
                 'value' => function($model){

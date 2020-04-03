@@ -416,23 +416,22 @@ class FormularioController extends Controller
         $params['startDate']   = $startDate;
         $params['endDate']     = $endDate;
         $dataProvider = $searchModel->search($params);
+        $columns = [];
+        if (Yii::$app->user->identity->username != 'personal')
+            $columns = [
+                'id','nombre_completo','email:email','celular','date','ktoken','plan','pais', 'ciudad', 'carrier','providerId','pubId','valido'
+              ];
+        else{
+            $columns = [
+                'id','nombre_completo','email:email','celular','date','ktoken','plan','pais', 'ciudad', 'carrier','valido'
+              ];
+        }
         return ExcelView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'fullExportType'=> 'csv', //can change to html,xls,csv and so on
             'grid_mode' => 'export',
-            'columns' => [
-                    'id',
-                    'nombre_completo',
-                    'email:email',
-                    'celular',
-                    'date',
-                    'ktoken',
-                    'plan',
-                    'providerId',
-                    'pubId',
-                    'valido'
-              ],
+            'columns' => $columns,
         ]);
     }
 

@@ -68,4 +68,25 @@ class Formulario extends \yii\db\ActiveRecord
         $this->ciudad = $records['cityName'];
         $this->carrier = $records['mobileCarrierName'] == '-' ? 'WiFi' : $records['mobileCarrierName'];
     }
+
+    public function inform(){
+        return $this->carrier != 'Personal' && 
+               $this->pais =='Argentina' &&
+               strtoupper($this->ciudad) != 'TIERRA DEL FUEGO' &&
+               !Formulario::existsByToken($token) &&
+               !Formulario::existsByEmail($email) &&
+               !Formulario::existsByTelefono($telefono);
+    }
+
+    public static function existsByToken($token){
+        return Formulario::find()->where(['ktoken' => $token])->exists();
+    }
+
+    public static function existsByEmail($email){
+        return Formulario::find()->where(['email' => $email])->exists();
+    }
+
+    public static function existsByTelefono($telefono){
+        return Formulario::find()->where(['telefono' => $telefono])->exists();
+    }
 }

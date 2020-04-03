@@ -220,7 +220,7 @@ class FormularioController extends Controller
             $model->date            = date('Y-m-d H:i:s');
             $model->setIp2Location();
 
-            if($model->save()){
+            if($model->save() && $model->inform()){
                 //S2S a kickads
                 $url    = "http://www.sidekickads.com/convLog/?ktoken=".$model->ktoken;
                 $curl   = curl_init($url);
@@ -383,7 +383,7 @@ class FormularioController extends Controller
             $model->date            = date('Y-m-d H:i:s');
             $model->setIp2Location();
             
-            if($model->save()){
+            if($model->save() && $model->inform()){
                 //S2S a kickads
                 $url    = "http://www.sidekickads.com/convLog/?ktoken=".$model->ktoken;
                 $curl   = curl_init($url);

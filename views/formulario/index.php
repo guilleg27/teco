@@ -78,8 +78,6 @@ HTML;
 <br /><br /><br /><br />
 <div class="formulario-index">
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <?php  Pjax::begin(); echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -93,8 +91,23 @@ HTML;
             'date',
             'ktoken',
             'plan',
-            'providerId',
-            'pubId',
+            [
+                'attribute' => 'providerId',
+                'visible' => Yii::$app->user->identity->username != 'personal'
+            ],
+            [
+                'attribute' => 'pubId',
+                'visible' => Yii::$app->user->identity->username != 'personal'
+            ],
+            [
+                'attribute' => 'pais',
+            ],
+            [
+                'attribute' => 'ciudad',
+            ],
+            [
+                'attribute' => 'carrier',
+            ],
             [
                 'format' => 'raw',
                 'value' => function($model){
@@ -114,7 +127,10 @@ HTML;
                     ]);
                 }
             ],
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{view}'
+            ],
 
         ],
         'responsive' => false,

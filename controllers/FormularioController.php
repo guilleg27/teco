@@ -11,7 +11,6 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use arturoliveira\ExcelView;
 
-
 /**
  * FormularioController implements the CRUD actions for Formulario model.
  */
@@ -27,12 +26,12 @@ class FormularioController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest', 'validar', 'export'],
+                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest', 'validar', 'export', 'testlocation'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
                     [
-                        'actions' => ['promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest'],
+                        'actions' => ['promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest', 'testlocation'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -219,8 +218,9 @@ class FormularioController extends Controller
             $model->pubId           = $data->post('pubId');
             $model->providerId      = $data->post('providerId');
             $model->date            = date('Y-m-d H:i:s');
+            $model->setIp2Location();
 
-            if($model->save()){
+            if($model->save() && $model->inform()){
                 //S2S a kickads
                 $url    = "http://www.sidekickads.com/convLog/?ktoken=".$model->ktoken;
                 $curl   = curl_init($url);
@@ -381,8 +381,9 @@ class FormularioController extends Controller
             $model->ktoken          = $data->post('ktoken');
             $model->plan            = $data->post('plan');
             $model->date            = date('Y-m-d H:i:s');
-
-            if($model->save()){
+            $model->setIp2Location();
+            
+            if($model->save() && $model->inform()){
                 //S2S a kickads
                 $url    = "http://www.sidekickads.com/convLog/?ktoken=".$model->ktoken;
                 $curl   = curl_init($url);
@@ -415,28 +416,28 @@ class FormularioController extends Controller
         $params['startDate']   = $startDate;
         $params['endDate']     = $endDate;
         $dataProvider = $searchModel->search($params);
-        ExcelView::widget([
+        $columns = [];
+        if (Yii::$app->user->identity->username != 'personal')
+            $columns = [
+                'id','nombre_completo','email:email','celular','date','ktoken','plan','pais', 'ciudad', 'carrier','providerId','pubId','valido'
+              ];
+        else{
+            $columns = [
+                'id','nombre_completo','email:email','celular','date','ktoken','plan','pais', 'ciudad', 'carrier','valido'
+              ];
+        }
+        return ExcelView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'fullExportType'=> 'csv', //can change to html,xls,csv and so on
             'grid_mode' => 'export',
-            'columns' => [
-                    'id',
-                    'nombre_completo',
-                    'email:email',
-                    'celular',
-                    'date',
-                    'ktoken',
-                    'plan',
-                    'providerId',
-                    'pubId',
-                    [
-                        'attribute' => 'valido',
-                        'value' => function($model){
-                            return $model->valido ? 'Valido' : 'Invalido';
-                        }
-                    ]
-              ],
+            'columns' => $columns,
         ]);
+    }
+
+    public function actionTestlocation(){
+        $model = new Formulario();
+        $model->setIp2Location();
+        var_dump($model->ciudad, $model->pais, $model->carrier);
     }
 }

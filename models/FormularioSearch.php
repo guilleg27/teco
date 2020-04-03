@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\Formulario;
@@ -51,6 +52,20 @@ class FormularioSearch extends Formulario
 
         $query = Formulario::find();
         $query->where(['between', 'date', $startDate, date('Y-m-d',strtotime('+1 day' , strtotime($endDate))) ]);
+        $query->andWhere(['or',
+           ['pais'=>'Argentina'],
+           ['pais'=>null],
+           ['pais'=>'-']
+        ]);
+        $query->andWhere(['or',
+           ['<>','UPPER(ciudad)', 'TIERRA DEL FUEGO'],
+           ['ciudad'=>null],
+           ['ciudad'=>'-']
+        ]);
+        $query->andWhere(['or',
+           ['<>','UPPER(carrier)', 'PERSONAL'],
+           ['carrier'=>null],
+        ]);
 
         // add conditions that should always apply here
 

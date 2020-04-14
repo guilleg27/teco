@@ -226,7 +226,6 @@ class FormularioController extends Controller
                 $curl   = curl_init($url);
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 $result = curl_exec($curl);
-                var_dump(true);die;
             }
             $success = 200;
         } else {

@@ -202,13 +202,13 @@ class FormularioController extends Controller
             CURLOPT_RETURNTRANSFER => true
         );
 
-        // $curl   = curl_init();
-        // curl_setopt_array($curl,$options);
-        // $result = curl_exec($curl);
-        // curl_close($curl);
-        // $gresponse  = json_decode($result);
+        $curl   = curl_init();
+        curl_setopt_array($curl,$options);
+        $result = curl_exec($curl);
+        curl_close($curl);
+        $gresponse  = json_decode($result);
 
-        if ( $data->post('phone') /*&& ($gresponse->success == true)*/ ) {
+        if ( $data->post('phone') && ($gresponse->success == true) ) {
             $model = new Formulario();
             $model->nombre_completo = $data->post('name');
             $model->email           = $data->post('email');

@@ -70,23 +70,24 @@ class Formulario extends \yii\db\ActiveRecord
     }
 
     public function inform(){
-        return $this->carrier != 'Personal' && 
-               $this->pais =='Argentina' &&
-               strtoupper($this->ciudad) != 'TIERRA DEL FUEGO' &&
-               !Formulario::existsByToken($token) &&
-               !Formulario::existsByEmail($email) &&
-               !Formulario::existsByTelefono($telefono);
+        return 
+                $this->carrier != 'Personal' && 
+                $this->pais =='Argentina' &&
+                strtoupper($this->ciudad) != 'TIERRA DEL FUEGO' &&
+                !Formulario::existsByToken($this->ktoken) &&
+                !Formulario::existsByEmail($this->email) &&
+                !Formulario::existsByTelefono($this->celular);
     }
 
     public static function existsByToken($token){
-        return Formulario::find()->where(['ktoken' => $token])->exists();
+        return Formulario::find()->where(['ktoken' => $token])->count() > 1 ? true : false;
     }
 
     public static function existsByEmail($email){
-        return Formulario::find()->where(['email' => $email])->exists();
+        return Formulario::find()->where(['email' => $email])->count() > 1 ? true : false;
     }
 
-    public static function existsByTelefono($telefono){
-        return Formulario::find()->where(['telefono' => $telefono])->exists();
+    public static function existsByTelefono($celular){
+        return Formulario::find()->where(['celular' => $celular])->count() > 1 ? true : false;
     }
 }

@@ -26,7 +26,7 @@ class FormularioController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest', 'validar', 'export', 'testlocation'],
+                        'actions' => ['index', 'create', 'update', 'delete', 'view', 'promo', 'generica', 'promo5gb', 'promo8gb', 'promo12gb', 'promo20gb', 'test', 'promotest', 'validar', 'export', 'testlocation','pixel','gracias'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -439,5 +439,23 @@ class FormularioController extends Controller
         $model = new Formulario();
         $model->setIp2Location();
         var_dump($model->ciudad, $model->pais, $model->carrier);
+    }
+
+    public function actionPixel(){
+        if (isset($_POST['_csrf'])){
+            // var_dump($_POST);
+            return $this->redirect(['formulario/gracias']);
+        }
+        $this->layout = 'vacio';
+        $model = new Formulario();
+
+        return $this->render('pixel', [
+            'model'=>$model
+        ]);       
+    }
+
+    public function actionGracias(){
+        return $this->render('gracias', [
+        ]);          
     }
 }

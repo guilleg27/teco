@@ -8,16 +8,6 @@ use yii\widgets\ActiveForm;
 /* @var $form ActiveForm */
 ?>
 
-<?php
-
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-
-/* @var $this yii\web\View */
-/* @var $model app\models\Formulario */
-/* @var $form ActiveForm */
-?>
-
 <script text="text/javascript">
     (function(action){
 

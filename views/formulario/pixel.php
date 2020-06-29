@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form ActiveForm */
 ?>
 
-<script text="text/javascript">
+<!-- <script text="text/javascript">
     (function(action){
 
         // Funcion setear ktoken
@@ -95,7 +95,7 @@ use yii\widgets\ActiveForm;
             setKickadsConversion();
         }
     })('click');
-</script>
+</script> -->
 
 <div class="pixel">
 

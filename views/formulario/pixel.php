@@ -8,8 +8,6 @@ use yii\widgets\ActiveForm;
 /* @var $form ActiveForm */
 ?>
 
-<script src="https://kickads-tags.s3.amazonaws.com/tagcl-kickads.min.js"></script>
-
 <div class="pixel">
 
     <?php $form = ActiveForm::begin(); ?>

@@ -8,33 +8,8 @@ use yii\widgets\ActiveForm;
 /* @var $form ActiveForm */
 ?>
 <div class="pixel">
-<script text="text/javascript">
-    (function(){
-        var setKickadsToken = function (token) {
-            setCookie('ktoken', token, 1)
-        }
-        function findGetParameter(parameterName) {
-            var result = null,
-                tmp = [];
-            location.search
-                .substr(1)
-                .split("&")
-                .forEach(function (item) {
-                tmp = item.split("=");
-                if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-                });
-            return result;
-        }
-        var setCookie = function (cname, cvalue, exdays) {
-            var d = new Date();
-            d.setTime(d.getTime() + (exdays*24*60*60*1000));
-            var expires = "expires="+ d.toUTCString();
-            document.cookie = cname + "=" + cvalue + ";" + expires + ";samesite=lax;path=/";
-        }
-        var ktoken = findGetParameter('ktoken');
-        setKickadsToken(ktoken);
-    })();
-</script>
+<script src="https://kickads-tags.s3.amazonaws.com/tagcl-kickads.min.js"></script>
+
     <?php $form = ActiveForm::begin(); ?>
 
         <?= $form->field($model, 'nombre_completo') ?>

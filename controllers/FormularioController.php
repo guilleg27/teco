@@ -446,7 +446,6 @@ class FormularioController extends Controller
             // var_dump($_POST);
             return $this->redirect(['formulario/gracias']);
         }
-        $this->layout = 'vacio';
         $model = new Formulario();
 
         return $this->render('pixel', [

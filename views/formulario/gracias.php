@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\Formulario */
 /* @var $form ActiveForm */
 ?>
-<img src="https://sidekickads.com/convLog/?random={RANDOM_PARAMETER}" style="display: none;"/>
+<img src="https://sidekickads.com/convLog/?random="<?=time()?> style="display: none;"/>
 <div class="pixel">
 
 Gracias.

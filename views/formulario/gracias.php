@@ -7,7 +7,6 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\Formulario */
 /* @var $form ActiveForm */
 ?>
-<iframe src="https://sidekickads.com/convLog/tag" frameborder="0"></iframe>
 <div class="pixel">
 
 Gracias.

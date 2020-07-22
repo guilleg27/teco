@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\Formulario */
 /* @var $form ActiveForm */
 ?>
-<img src="https://sidekickads.com/convLog/?random=<?=time()?>" style="display: none;"/>
+<iframe src="https://sidekickads.com/convLog/tag" frameborder="0"></iframe>
 <div class="pixel">
 
 Gracias.

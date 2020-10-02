@@ -16,4 +16,5 @@ Objetivo: sistema de gestion de campañas
 - Exporte a excel de leads
 - Procesar la carga de formularios (incluye un captcha!!),
 - Validación de datos ingresados
+- Modificacion o delete de leads.
 

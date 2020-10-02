@@ -1,5 +1,5 @@
-Sistema de gestión para campaña de portabilidad númerica de Telecom Personal.
-Desarrollado en PHP (yii2) - MySQL
+<b>Sistema de gestión para campaña de portabilidad númerica de Telecom Personal.</b>
+Desarrollado en PHP (yii2) - MySQL - HTML - Bootstrap - Javascript.
 
 Login admin
 'username' => 'kickads',
